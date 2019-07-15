@@ -5,8 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>手动实现一个轮播图</title>
+    <!-- 参考bootstrap轮播图的实现
+    思路：为组件标上各种含义的类名或id，基本布局与样式通过css实现，通过js控制类名的增删和属性的增删以控制css样式动态变化，实现图片滚动
+    -->
 </head>
+
 <body>
+        <div id="demo" class="carousel slide" data-ride="carousel">
+                <!-- 指示符 -->
+                <ul class="carousel-indicators">
+                  <li data-target="#demo" data-slide-to="0" class="active"></li>
+                  <li data-target="#demo" data-slide-to="1"></li>
+                  <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+               
+                <!-- 轮播图片 -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
+                  </div>
+                </div>
+               
+                <!-- 左右切换按钮 -->
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                </a>
+               
+              </div>
     
 </body>
+<style>
+     ul {
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+    .carousel {
+        position: relative;
+    }
+    .carousel-item {
+        position: relative;
+        /* display: none; */
+        align-items: center;
+        width: 100%;
+        transition: transform .6s ease,-webkit-transform .6s ease;
+    }
+    .carousel-indicators {
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 10px;
+        z-index: 15;
+        display: flex;
+        justify-content: center;
+        margin-right: 10%;
+        margin-left: 15%;
+        padding-left: 0;
+        list-style: none;
+    }
+    .carousel-indicators li {
+        position: relative;
+        flex: 0 1 auto;
+        width: 30px;
+        height: 3px;
+        margin-right: 3px;
+        margin-left: 3px;
+        text-indent: -999px;
+        background-color: rgba(255, 255, 255, .5);
+
+    }
+    .carousel-indicators .active {
+        background-color: #ffffff;
+    }
+    .carousel-inner {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+    .carousel-inner img {
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+    }
+    .carousel-control-next, .carousel-control-prev, .carousel-item.item {
+        display: block;
+    }
+    .carousel-control-next {
+        right: 0;
+    }
+    .carousel-control-prev {
+        left: 0;
+    }
+    .carousel-control-next, .carousel-control-prev {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 15%;
+        color: #ffffff;
+        text-align: center;
+        opacity: .5;
+    }
+    .carousel-control-prev:focus, .carousel-control-prev:hover, .carousel-control-next:focus, .carousel-control-next:hover {
+        color: #fff;
+        text-decoration: none;
+        outline: 0;
+        opacity: .9;
+    }
+    .carousel-control-next-icon, .carousel-control-prev-icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: transparent no-repeat center center;
+        background-size: 100% 100%;
+    }
+    .carousel-control-prev-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+    }
+    .carousel-control-next-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+    }
+    .carousel-item-next.carousel-item-left,
+    .carousel-item-prev.carousel-item-right {
+        transform: translateX(0);
+    }
+    .carousel-item-next,
+    .active.carousel-item-right {
+        transform: translateX(100%);
+    }
+</style>
+<script>
+//首先采用链式编程,再使用DOM元素上有一个dataset属性,这是一个DOMStringMap类型的键值对集合
+// document.getElementById('main').dataset.isBoss = true;
+//  document.getElementById('main').dataset.emp = {'name':'zhangsan',age:23};
+// 结果:
+// 这就完成了添加两个data-自定义的属性
+
+// 读取data-*属性也可以使用dataset这个属性规则是一样的
+
+//  console.log(document.getElementById('main').dataset.isBoss); //返回true
+// 除此之外还可以使用JS原生的getAttribute/setAttribute方法
+
+//  document.getElementById('main').setAttribute('data-email','chentging@aliyun.com');
+//  document.getElementById('main').getAttribute('data-email');
+</script>
 </html>
