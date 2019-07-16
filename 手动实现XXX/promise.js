@@ -1,6 +1,9 @@
 // 参考资料：
 // https://www.jianshu.com/p/c633a22f9e8c
 // https://www.jianshu.com/p/327e38aec874
+// https://www.jianshu.com/p/43de678e918a
+// https://yuchengkai.cn/docs/frontend/#promise-%E5%AE%9E%E7%8E%B0
+// https://www.cnblogs.com/XieJunBao/p/9156134.html
 
 // promise 是异步编程管理的一种方式，有三种状态：
 // pending:正在进行中
@@ -25,195 +28,221 @@
 function Promise(fn) {
     // 保存当前作用域的this
     var _this = this;
-    this.data = null;
-    this.err = null;
-    this.state = 'pending';
-    // 这两个栈为的是兼容异步的状态改变
+    _this.data = null;
+    _this.state = 'pending';
+    // 这两个栈为的是兼容异步的状态改变,并支持then的多次调用
     // 成功回调栈
-    this.successAllCallbacks = [];
+    _this.successAllCallbacks = [];
     // 失败回调栈
-    this.failAllCallbacks=[];
-    // 定义成功方法，成功时候循环执行完成功栈中的所有回调
-    function resolve(data) {
+    _this.failAllCallbacks=[];
+    // 定义成功方法，成功时候循环执行完成功栈中的所有回调，setTimeout 实现异步执行
+    _this.resolve = function(data) {
+        if(data instanceof Promise) return data.then(_this.resolve, _this.reject);
+        setTimeout(()=>{
         // 判断状态再执行，为了实现状态转换的不可逆
+        // console.log(_this.state);
         if(_this.state === 'pending') {
-            _this.successAllCallbacks.forEach((callback)=>{
-                callback(data);
-            });
-            _this.data = data;
             _this.state = 'resolved';
-        }
+            _this.data = data;
+            _this.successAllCallbacks.forEach((callback)=>{
+                callback();
+            });
+        }});
     }
     // 定义失败方法，失败时候执行完失败栈中的所有回调
-    function reject(err) {
-        if(_this.state === 'pending') {
-            _this.failAllCallbacks.forEach((callback)=>{
-                callback(err);
-            })
-            _this.err = err;
+    _this.reject = function(err) {
+        setTimeout(()=>{
+            if(_this.state === 'pending') {
+            _this.data = err;
             _this.state = 'rejected';
-        }
+            _this.failAllCallbacks.forEach((callback)=>{
+                callback();
+            })
+        }});
     }
     // 为了实现 promise实例化时就会执行 的效果
-    fn(resolve, reject);
+    try {
+        fn(_this.resolve, _this.reject);
+      } catch (e) {
+        _this.reject(e);
+      }
 }
 
 // 在原型上定义then方法，将成功回调和失败回调压入栈中。
-Promise.prototype.then = function(fulfilled, rejected) {
-    if(this.state === 'pending') {
-        // 如果传入了函数参数则执行，反之略过
-        if(typeof fulfilled === 'function') {
-            this.successAllCallbacks.push(fulfilled);
-            this.failAllCallbacks.push(rejected);
-        }
+Promise.prototype.then = function (onResolved, onRejected) {
+    var _this = this;
+    var promise2;
+    // 处理传入then中的两个回调
+    if(typeof onResolved === 'function') {
+        onResolved = onResolved;
+    } else {
+        onResolved = (value)=>value;
     }
-    if(this.state === 'resolved') {
-        fulfilled(this.data);
+    if(typeof onRejected === 'function') {
+        onRejected = onRejected;
+    } else {
+        onRejected = (value)=>{throw value};
     }
-    if(this.state === 'rejected') {
-        rejected(this.err);
+
+    if(_this.state==='resolved') {
+        return (promise2 = new Promise(function(resolve, reject) {
+            setTimeout(function() {
+                try {
+                    var x = onResolved(_this.data);
+                    resolution(promise2, x, resolve, reject);
+                } catch (r) {
+                    reject(r);
+                }
+            });
+        }));
     }
-    return new Promise((onFulfilled,onRejected)=>{
-        // 封装一个成功时执行的函数
-    let successFn = value => {
-        try {
-          if (!typeof fulfilled === 'function') {
-            onFulfilled(value)
-          } else {
-            let res =  fulfilled(value);
-            if (res instanceof Promise) {
-              // 如果当前回调函数返回MyPromise对象，必须等待其状态改变后在执行下一个回调
-              res.then(onFulfilled, onRejected)
-            } else {
-              //否则会将返回结果直接作为参数，传入下一个then的回调函数，并立即执行下一个then的回调函数
-              onFulfilled(res)
-            }
-          }
-        } catch (err) {
-          // 如果函数执行出错，新的Promise对象的状态为失败
-          onRejected(err)
-        }
-      }
-    //   -----------------------------
-      // 封装一个失败时执行的函数
-    let rejected = error => {
-        try {
-          if (!isFunction(onRejected)) {
-            onRejectedNext(error)
-          } else {
-              let res = onRejected(error);
-              if (res instanceof MyPromise) {
-                // 如果当前回调函数返回MyPromise对象，必须等待其状态改变后在执行下一个回调
-                res.then(onFulfilledNext, onRejectedNext)
-              } else {
-                //否则会将返回结果直接作为参数，传入下一个then的回调函数，并立即执行下一个then的回调函数
-                onFulfilledNext(res)
-              }
-          }
-        } catch (err) {
-          // 如果函数执行出错，新的Promise对象的状态为失败
-          onRejectedNext(err)
-        }
-      }
-      switch (_status) {
-        // 当状态为pending时，将then方法回调函数加入执行队列等待执行
-        case PENDING:
-          this._fulfilledQueues.push(fulfilled)
-          this._rejectedQueues.push(rejected)
-          break
-        // 当状态已经改变时，立即执行对应的回调函数
-        case FULFILLED:
-          fulfilled(_value)
-          break
-        case REJECTED:
-          rejected(_value)
-          break
-      }
-    })
+
+    if(_this.state === 'rejected') {
+        return (promise2 = new Promise(function (resolve, reject) {
+            setTimeout(function() {
+                try {
+                    var x = onRejected(_this.data);
+                    resolution(promise2, x, resolve, reject);
+                } catch (r) {
+                    reject(r);
+                }
+            });
+        }));
+    }
+
+    if(_this.state === 'pending') {
+        return (promise2 = new Promise(function (resolve, reject) {
+            _this.successAllCallbacks.push(function() {
+                try {
+                    var x = onResolved(_this.data);
+                    resolution(promise2, x, resolve, reject);
+                } catch (r) {
+                    reject(r);
+                }
+            });
+            _this.failAllCallbacks.push(function() {
+                try {
+                    var x = onRejected(_this.data);
+                    resolution(promise2, x, resolve, reject);
+                } catch (r) {
+                    reject(r);
+                }
+            });
+        }));
+    }
 }
 
-// 此方法用来封装链式调用产生的结果。根据上一个then的返回值，返回新的promise2
-function resolvePromise(promise2, x, resolve, reject) {
-    // 如果x==promise2（循环引用），抛出错误
+// 封装then过程操作
+// promise2 then返回的promise对象；x then方法中回调完得到的结果；resolve新promise的resolve方法；reject同理
+function resolution(promise2, x, resolve, reject) {
+    // x.then(value=>{return x})
     if(promise2 === x) {
-        reject(new TypeError('发生循环引用'));
+        return reject(new TypeError('发生循环引用！'));
     }
-    // 如果是对象/函数，进一步处理
+    // 如果x为promise，状态为pending
+    if(x instanceof Promise) {
+        if(x.state === 'pending') {
+            x.then(function (value) {
+                resolution(promise2, value, resolve, reject);
+            },reject);
+        } else {
+            x.then(resolve, reject);
+        }
+        return;
+    }
+    let called = false;
     if(x !== null && (typeof x === 'object' || typeof x === 'function')) {
-        // 如果是个thenable对象
         try {
             let then = x.then;
             if(typeof then === 'function') {
-                let y = then.call(x,(y)=>{
-                    resolvePromise(promise2, y, resolve, reject)
-                }, (r)=>{
-                    reject(r);
+                then.call(x, y=>{
+                    if(called) return;
+                    called = true;
+                    resolution(promise2, y, resolve, reject);
+                },e=>{
+                    if(called) return;
+                    called = true;
+                    reject(e);
                 })
             } else {
                 resolve(x);
             }
-        } catch(e) {
+        } catch (e) {
+            if(called) return;
+            called = true;
             reject(e);
         }
-    }
-    // 如果是个普通值
-    else {
+    } else {
         resolve(x);
     }
 }
 
-
-
 // 生成promise实例
-var test = new Promise((resolve,reject)=>{
-    console.log('新建promise时候同步执行');
-    // 异步操作
-    setTimeout(function() {
-        var data = {
-            code: 0,
-            data: 'hello promise'
-        };
-        if(data.code == 0) {
-            // promise在新建的时候就会执行
-            console.log('在新建时候执行(推迟了1秒)', data.data);
-            resolve(data.data);
-        } else {
-            reject(err);
-        }
-    }, 1000);
-})
-test.then((value)=>{
-    console.log('test', value);
-},(err)=>{
-    console.log('test',err);
-})
+// var test = new Promise((resolve,reject)=>{
+//     // 异步操作
+//     setTimeout(function() {
+//         var data = {
+//             code: 0,
+//             data: 'hello promise'
+//         };
+//         if(data.code == 0) {
+//             // promise在新建的时候就会执行
+//             console.log('在新建时候执行(推迟了1秒)', data.data);
+//             resolve(data.data);
+//         } else {
+//             reject('promise出错！');
+//         }
+//     }, 1000);
+// })
+
+// var then = test.then((value)=>{
+//     console.log('test', value);
+// },(err)=>{
+//     console.log('test',err);
+// }).then(()=>{
+//     console.log('nextthen')
+// });
+
 
 // 通常我们会把promise包在一个函数中，在需要的时候再去调用而不是一新建就调用
 
-function fn() {
-    return new Promise((resolve,rejected)=>{
-        // 异步操作
-        setTimeout(function() {
-            var data = {
-                code: 0,
-                data: 'hello promise'
-            };
-            if(data.code == 0) {
-                console.log('只有fn被调用时才会被执行', data.data);
-                resolve(data.data);
-            } else {
-                rejected(err);
-            }
-        }, 1000);
-    })
+// function fn() {
+//     return new Promise((resolve,rejected)=>{
+//         // 异步操作
+//         setTimeout(function() {
+//             var data = {
+//                 code: 0,
+//                 data: 'hello promise'
+//             };
+//             if(data.code == 0) {
+//                 console.log('只有fn被调用时才会被执行', data.data);
+//                 resolve(data.data);
+//             } else {
+//                 rejected(err);
+//             }
+//         }, 1000);
+//     })
+// }
+
+// // // fn返回了一个promise，因此可以用then执行成功/失败的回调
+// var promise = fn();
+// promise.then(value=>{
+//     console.log('success!', value);
+// },err=>{
+//     console.log('error!', err);
+// });
+Promise.prototype.catch = function(onRejected) {
+    return this.then(null, onRejected);
 }
-
-// // fn返回了一个promise，因此可以用then执行成功/失败的回调
-var promise = fn();
-promise.then(value=>{
-    console.log('success!', value);
-},err=>{
-    console.log('error!', err);
-});
-
-console.log('同步的主线程');
+// console.log('同步的主线程');
+Promise.deferred = function() {
+    let defer = {};
+    defer.promise = new Promise((resolve, reject) => {
+        defer.resolve = resolve;
+        defer.reject = reject;
+    });
+    return defer;
+}
+try {
+    module.exports = Promise
+} catch (e) {}
