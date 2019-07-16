@@ -27,3 +27,7 @@
   - 手动实现XXX：
     - 手动实现promise增加链式调用和异步then
     - 手动实现轮播图
+- 2019.07.16
+  - package.json：加入了promise测试插件promises-aplus-tests
+  - 手动实现XXX：
+    - 手动实现promise完整代码版

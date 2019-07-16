@@ -10,10 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/HEYAN123/crane.git"
   },
-  "author": "",
+  "author": "heyan",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/HEYAN123/crane/issues"
   },
-  "homepage": "https://github.com/HEYAN123/crane#readme"
+  "homepage": "https://github.com/HEYAN123/crane#readme",
+  "dependencies": {
+    "promises-aplus-tests": "^2.1.2"
+  }
 }
