@@ -9,4 +9,16 @@
 <body>
     
 </body>
+<script>
+var debounce = function(time, action) {
+    var last;
+    return function() {
+        var ctx = this,args = arguments;
+        clearTimeout(last);
+        last = setTimeout(function() {
+            action.apply(ctx, args);
+        }, time);
+    }
+}
+</script>
 </html>

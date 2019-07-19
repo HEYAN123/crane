@@ -9,4 +9,19 @@
 <body>
     
 </body>
+<script>
+
+var throttle = function(time, action) {
+    var last = 0;
+    return function() {
+        var curr = new Date();
+        if(curr-last>time) {
+            action.apply(this, arguments) {
+                last = curr;
+            }
+        }
+    }
+}
+
+</script>
 </html>
