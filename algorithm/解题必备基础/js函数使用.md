@@ -38,3 +38,11 @@ var max = Math.max(1,2) // 2
 ```javascript
 var max = Math.min(1,2) // 1
 ```
+
+## 异或
+
+a^a=0
+
+a^0=a
+
+a^b^a=a^a^b=0^b=b
