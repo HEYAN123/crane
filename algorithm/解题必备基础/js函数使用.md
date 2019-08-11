@@ -39,6 +39,14 @@ var max = Math.max(1,2) // 2
 var max = Math.min(1,2) // 1
 ```
 
+---
+
+## Math.pow(x, y)幂运算
+
+- 表示x的y次幂
+
+---
+
 ## 异或
 
 a^a=0
@@ -53,3 +61,10 @@ a^b^a=a^a^b=0^b=b
 
 - ⌊x⌋：地板函数，或取整函数，表示小于 x 的最大整数； js中就是parseInt(x)
 - ⌈x⌉：天花板函数，表示大于 x 的最小整数。 js中可以用parseInt(x)+1取到
+
+---
+
+## charCodeAt()
+
+- 将字母转换为ASCII码，可以用来计算两个字母之间相隔多少.
+- 'B'.charCodeAt()-'A'.charCodeAt() = 1
