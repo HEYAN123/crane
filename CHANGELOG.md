@@ -3,6 +3,7 @@
 - 2019.08.11
   - 题集：
     - Excel表列序号
+    - 阶乘后的零
   - js函数使用：
     - Math.pow(x, y)幂运算
     - charCodeAt()
