@@ -71,6 +71,12 @@ a^b^a=a^a^b=0^b=b
 
 ---
 
+## String.fromCharCode(num)
+
+- 将ascii码转换为字符
+
+---
+
 ## 位移运算
 
 - <<：二进制下每位左移
