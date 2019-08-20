@@ -1,3 +1,4 @@
+// https://github.com/YvetteLau/Blog/issues/7
 // call的讲究：
 // 将函数设为传输参数的属性
 // 指定this到函数并传入给定参数执行函数

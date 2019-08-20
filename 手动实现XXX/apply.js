@@ -1,3 +1,4 @@
+// https://github.com/YvetteLau/Blog/issues/7
 // apply的第二个参数是数组或者类数组
 
 Function.prototype.apply = function(context, rest) {
