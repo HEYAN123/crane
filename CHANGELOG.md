@@ -4,6 +4,7 @@
   - 手动实现XXX：
     - 返回某元素第n层父元素结点
     - 实现children方法：childrenFn
+    - 实现hasChildren方法：hasChildrenFn
 - 2019.08.21
   - js知识：
     - Generator
