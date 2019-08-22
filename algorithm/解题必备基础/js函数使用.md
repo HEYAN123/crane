@@ -10,6 +10,27 @@
 
 ---
 
+## slice()
+
+- 从已有的数组中返回选定的元素
+
+```javascript
+arrayObject.slice(start,end);
+//  返回一个新数组，包含从start到end（不包括该元素）的元素
+// 不会修改数组，而是返回一个子数组
+```
+
+---
+
+## concat()
+
+- 用于连接两个或多个数组
+- 不会改变现有的数组，而是仅仅返回被连接数组的一个副本
+
+```javascript
+arrayObject.concat(arr1, arr2);
+```
+
 ## charAt()
 
 - 取一个字符串中第某个的字母
