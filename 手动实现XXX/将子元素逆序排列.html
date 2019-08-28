@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>111</h1>
+        <h2>222</h2>
+        <h3>333</h3>
+    </div>
+    
+    <script>
+        Element.prototype.reverseChild = function() {
+            // 子节点列表
+            var children = this.children;
+            for(let i = children.length-2; i>=0; i--) {
+                this.appendChild(children[i]);
+            }
+        }
+    </script>
+</body>
+</html>
