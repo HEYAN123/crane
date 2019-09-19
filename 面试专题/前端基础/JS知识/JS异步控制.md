@@ -448,7 +448,8 @@ function *main() {
 // 得到迭代器
 var iter = main();
 var promise = iter.next().value; // 取得yield后面表达式的值，这里就是get()返回的promise
-// 根据promise的执行结果状态决定生成器函数里的下一步行动
+
+// 根据promise的执行结果状态决定生成器函数里的下一步行动，推动promise和生成器的执行
 promise.then(
     // 成功返回值那就继续生成器函数（为data赋值和alert）
     function resolved(res)=>{
@@ -465,31 +466,130 @@ promise.then(
 - 整体的执行流程和回调+Generator类似：
 - var data -> ajax('/api' -> 得到不可再变的成功状态) -> 给data赋值 -> alert(data)
 
-- 我们觉得有点恶心的地方在于，我们需要在优雅的生成器函数的背后，编写promise的then方法以期得到需要的promise（iter.next().value）
+- 上面例子有点恶心的地方在于，我们需要在优雅的生成器函数的背后，手动推动迭代器next下去，编写并调用适用于promise的then（链）方法以期为生成器函数提供需要的promise（iter.next().value）。
+- 信任问题交给promise解决了，我们只想舒畅地使用优雅的生成器函数，不想写推动promise一直then下去的的那一坨代码——如果能让他自己跑完promise链把最后的结果通过next抛给main函数就好了！
+- 很多人都想到了这个问题，于是有很多相关库实现了这种自动化工具，比如下面这段代码就是其中之一：
 
 ```javascript
+// 摘自《你不知道的JS》（中卷）
+
 function run(main) {
     // args取到了可能要传给生成器函数的参数
     var args = [].slice.call(arguments, 1), iter;
     // 调用生成器函数得到迭代器
     iter = main.apply(this, args);
+    // 返回一个promise
     return Promise.resolve().then(
+        // 推动main函数继续执行
         function handleNext(data) {
             var next = iter.next(data);
             return (function handleResult(next) {
+                // 执行完了吗
                 if(next.done) {
                     return next.value;
                 } else {
-                    
+                    // 没有执行完就继续
+                    return Promise.resolve(next.value).then(
+                        handleNext,
+                        function handleErr(err) {
+                            return Promise.resolve(
+                                it.throw(err);
+                            ).then(handleResult);
+                        }
+                    )
                 }
-            })
+            })(next);
         }
     )
 
 }
 ```
 
+- 如果你不需要自定义化把控不同状态的promise的回调而只关注最终数据结果，那就尽情将过程交给此类工具（叫执行器），还有更为复杂精妙的工具（比如co库），我没有用过，感兴趣可以去了解，你也可以自己封装。
+- 利用这个工具我们的代码就可以更加优雅：
+
+```javascript
+......
+function *main(){
+    ......
+}
+run(main);
+```
+
 ### async/await
 
+- 有一种说法，async和await是生成器函数使用的语法糖，即简写版生成器：
+
+```javascript
+// 生成器函数写法
+function *main() {
+    var data = yield get('/api'); // 暂停点
+    alert(data);
+}
+// 对应的语法糖写法
+async function main() {
+    var data = await get('/api'); // 暂停点
+    alert(data);
+}
+```
+
+- 除了将*号替换成async，yield替换为await之外（很明显单这两点看不出来这语法糖哪里甜），更出彩的是async/await是内置了执行器——每遇到一个await的表达式就会运行并返回结果，不需要next：
+
+```javascript
+function get(url) {
+    return new Promise((resolve, reject)=>{
+        ajax(url, (res)=>{
+            if(res.code === 200) resolve(res);
+            else reject(res);
+        })
+    });
+}
+
+async function main() {
+    var promise = await get('/api'); // 运行get('/api')，得到的是一个promise
+    return promise;
+}
+// 跑一下
+main().then(res=>{
+    alert(res.data);
+})
+```
+
+- 这样看起来怪怪的，你可能会说那我还不如直接跑get然后then——你说的很对。于是我们用async/await时会像下面这样写：
+
+```javascript
+function get(url) {
+    return new Promise((resolve, reject)=>{
+        ajax(url, (res)=>{
+            if(res.code === 200) resolve(res);
+            else reject(res);
+        })
+    }).then(res=>{
+        return res.data;
+    });
+}
+
+// async/await写法------------------------
+async function main() {
+    var data = await get('/api'); // 运行get('/api')，会等他返回了data
+    alert(data);
+}
+// 跑一下就会直接按顺序执行，妈妈再也不用担心我异步的用同步代码取不到值或者没有拿next驱动啦
+main();
+
+// 生成器写法-----------------------------
+function *main() {
+    var data = field get('/api');
+    alert(data);
+}
+var iter = main();
+var value = iter.next().value; //推一下，得到了field后面表达式的值，是res.data
+iter.next(value); //再推一下，赋值给data并且alert
+
+// promise写法----------------------------
+get('/api').then((data)=>{
+    alert(data);
+});
+```
 
 ### 实际应用里
