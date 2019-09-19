@@ -1,9 +1,41 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [JS异步控制](#js%e5%bc%82%e6%ad%a5%e6%8e%a7%e5%88%b6)
+  - [异步](#%e5%bc%82%e6%ad%a5)
+    - [定义](#%e5%ae%9a%e4%b9%89)
+    - [异步现象](#%e5%bc%82%e6%ad%a5%e7%8e%b0%e8%b1%a1)
+    - [异步原理](#%e5%bc%82%e6%ad%a5%e5%8e%9f%e7%90%86)
+      - [执行栈](#%e6%89%a7%e8%a1%8c%e6%a0%88)
+      - [任务队列（task queue）](#%e4%bb%bb%e5%8a%a1%e9%98%9f%e5%88%97task-queue)
+      - [事件循环](#%e4%ba%8b%e4%bb%b6%e5%be%aa%e7%8e%af)
+  - [异步编程方案](#%e5%bc%82%e6%ad%a5%e7%bc%96%e7%a8%8b%e6%96%b9%e6%a1%88)
+    - [回调](#%e5%9b%9e%e8%b0%83)
+      - [1. 令人费解](#1-%e4%bb%a4%e4%ba%ba%e8%b4%b9%e8%a7%a3)
+      - [2. 信任问题](#2-%e4%bf%a1%e4%bb%bb%e9%97%ae%e9%a2%98)
+    - [Promise](#promise)
+      - [可信任](#%e5%8f%af%e4%bf%a1%e4%bb%bb)
+      - [串行的链式调用](#%e4%b8%b2%e8%a1%8c%e7%9a%84%e9%93%be%e5%bc%8f%e8%b0%83%e7%94%a8)
+    - [Generator](#generator)
+      - [Iterator](#iterator)
+      - [简单认识Generator](#%e7%ae%80%e5%8d%95%e8%ae%a4%e8%af%86generator)
+      - [Generator控制异步](#generator%e6%8e%a7%e5%88%b6%e5%bc%82%e6%ad%a5)
+      - [Generator + Promise组合控制](#generator--promise%e7%bb%84%e5%90%88%e6%8e%a7%e5%88%b6)
+    - [async/await](#asyncawait)
+    - [实际应用里](#%e5%ae%9e%e9%99%85%e5%ba%94%e7%94%a8%e9%87%8c)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+- 最近心情略为烦闷。每天上班坐满9个小时，晚上回家刷剧/看书/弹吉他/钩毛线四个小时然后睡觉——感觉日复一日，生活千篇一律，没有让我欢乐的感觉（不知道是不喜欢工作内容还是纯粹因为我懒而不喜欢工作）。对未来有点迷茫但我也疲于规划。总想着去做点自己喜欢做的事情却无从下手，而又迫于生活去重复工作，不知道这是不是成年人本来的生活状态。
+- 百无聊赖下我开始写博客，梳理我的见识——大概等梳理完了我就变成了厉害角色，但也耗尽了我的耐心，我也就“被迫”解放了。
+
 # JS异步控制
 
 - 参考资料：
 - 《你不知道的JavaScript》（中卷）
 - <https://segmentfault.com/a/1190000017350739>
 - <https://github.com/YvetteLau/Blog/issues/4>
+- <http://es6.ruanyifeng.com/>
 
 ## 异步
 
@@ -196,7 +228,7 @@ get('/api', function (res) {
 }, function (err)=>{
     alert(err);
 });
-
+// -----------------------------------------------------------
 // promise写法（get方法被封装成了promise，那么他不会控制回调函数的执行）
 function get(url) {
     return new Promise((resolve, reject)=>{
@@ -260,5 +292,204 @@ fn1.then(function callbackA(res){
 
 ### Generator
 
+- 生成器的意思。你可能会问这个生成器能生成什么？答案是能生成迭代器（Iterator）。
+- Generator又是一种异步编程方案，他可以以更“同步式”的方法表达异步。下面从概念入手，看看生成器是如何组织异步的。
+
+#### Iterator
+
+- 迭代器，也叫遍历器，是为了以统一方式遍历某类型的某组数据时需要的访问接口，说白了就是，只要一组数据拥有迭代器，就能够以for...of...的形式遍历里面的元素。
+- 比如Array类型，Map类型，Set类型能以for...of...的形式遍历里面的元素，因为他们都有默认的迭代器接口，即他们身上有一个属性叫Symbol.iterator，是构造器的构造函数；而普通Object对象则不能，因为它没有迭代器接口。
+- 某一组数据的迭代器上有next的方法，可以手动挨个获取元素：
+
+```javascript
+// 一个可以迭代的数组
+var arr = [5,4,3,2,1];
+// 实例化它的一个迭代器
+var iter = arr[Symbol.iterator]();
+iter.next(); // {value: 5, done: false}
+iter.next(); // {value: 4, done: false}
+iter.next(); // {value: 3, done: false}
+```
+
+#### 简单认识Generator
+
+- Generator最大的特点就是能控制程序的运行与暂停，就像debug一样：打一个断点，然后可以控制程序按我们的意愿走走停停。
+- 详细分析Generator的运行流程可以参考我之前写的一篇分析：[Generator执行流程](../../../js知识/Generator.md)，更深入建议参考阮一峰的ES6入门，这里只做简单介绍：
+
+```javascript
+// 加了*号表示这是一个生成器函数
+function *foo() {
+    var val = 1;
+    // 进入此循环val就会不断加1
+    while(true) {
+        val ++;
+        // 碰到yield的地方会暂停
+        var temp = yield val;
+        console.log(temp);
+    }
+}
+// 调用生成器函数能生成一个迭代器，而不执行生成器函数里的逻辑
+var iter = foo();
+// 每次next就会执行到下一个yield停止，并返回一个对象表示迭代器里的值（value,表示yield后面式子的值，这里就是val的值）与是否迭代完成（done）
+iter.next(); //{value: 2, done: false}
+// yield没有返回值，temp赋为undefined
+iter.next(); //{value: 3, done: false} undefined
+// 传递给next方法的参数会被当做yield的返回值，付给temp
+iter.next(55); //{value: 4, done: false} 55
+```
+
+- 介绍完了。
+
+![avatar](../../../static/emoji.jpg)
+
+#### Generator控制异步
+
+- 我们说Generator又是一种异步编程方案，看了上面的你可能还不能联想到这跟异步有什么关系，继续拿回调函数方案做对比：
+
+```javascript
+// 我们要实现的流程是：请求数据->成功：alert / 失败：throw抛错
+
+// 一个看起来比较优雅的回调实现
+function get(url, cb) {
+    ajax(url, cb);
+};
+// 调用
+get('/api', (res) => {
+    if(res.code === 200) alert(res.data);
+    else throw res;
+});
+// ---------------------------------------------
+// 用生成器实现
+function get(url) {
+    ajax(url, (res) => {
+        if(res.code === 200) iter.next(res.data);
+        else it.throw(res);
+    });
+}
+function *main() {
+    // 请注意这两句熟悉的代码
+    var data = yield get('/api'); // 这里是个暂停点
+    alert(data);
+}
+// 得到迭代器
+var iter = main();
+// 请求，启动！跳到get函数里，如果200就会继续iter.next(res.data)，然后执行yield后面的alert(data);
+it.next();
+```
+
+- 一开始我们讨论异步时提到过下面错误的代码：
+
+```javascript
+var data = get('/api');
+alert(data); // undefined！
+```
+
+- 然后我们这里利用生成器让这样的同步代码正确执行了异步：
+
+```javascript
+function *main() {
+    var data = yield get('/api');
+    alert(data); // data取到了值
+}
+```
+
+- 用生成器写异步最大的好处就在于此，把异步事件按同步思维表达出来，代码读起来非常舒适。
+- 这种方案可以理解为在回调方案里加入了生成器（callback+Generator的编程方案）。
+
+- 这里可能懵逼了，我用图来描述一下程序执行流程：
+
+![avatar](../../../static/async7.PNG)
+
+- 这里能正确执行的秘诀就在于我们的yield“断点”阻止了异步事件完成之前给data赋值以及alert，而是生成器之外的get方法不会被暂停（暂停的只是生成器体内的语句执行），在异步函数的结果处理函数里解除暂停，而此结果处理函数是在请求结束返回结果时才会执行，进而保证了给data赋值以及alert的操作会在得到结果时执行。概而言之，就是把非阻塞的异步转化为阻塞的同步了
+- 于是程序执行的顺序是：var data -> ajax('/api' -> 调用回调得到值) -> 给data赋值 -> alert(data)
+
+- 但是，生成器的使用虽然完美地解决了回调编程里代码执行顺序混乱难读的问题，我们发现它并没有解决信任问题：这里依旧出现了控制反转，把对结果的处理权交给了get方法。而使用promise虽然解决了信任问题但代码又不如Generator来的好看。
+- 怎么办呢？既然Generator和promise都有各自的优点，那我们就各取所长，将二者结合使用不就好了~
+
+#### Generator + Promise组合控制
+
+- 先再用promise方式写一下上面的请求例子：
+
+```javascript
+function get(url) {
+    return new Promise((resolve, reject)=>{
+        ajax(url, (res)=>{
+            if(res.code === 200) resolve(res);
+            else reject(res);
+        })
+    });
+}
+get('/api').then(
+    function resolved(res)=>{
+        alert(res);
+    },
+    function rejected(err)=>{
+        throw err;
+    }
+)
+```
+
+- 我们非常中意它的状态转换机制，因为这解决了信任问题，但我们还想要Generator优雅的同步表达。于是我们在promise中加入了Generator：
+
+```javascript
+function get(url) {
+    return new Promise((resolve, reject)=>{
+        ajax(url, (res)=>{
+            if(res.code === 200) resolve(res);
+            else reject(res);
+        })
+    });
+}
+// 生成器函数
+function *main() {
+    var data = yield get('/api'); // 暂停点
+    alert(data);
+}
+// 得到迭代器
+var iter = main();
+var promise = iter.next().value; // 取得yield后面表达式的值，这里就是get()返回的promise
+// 根据promise的执行结果状态决定生成器函数里的下一步行动
+promise.then(
+    // 成功返回值那就继续生成器函数（为data赋值和alert）
+    function resolved(res)=>{
+        iter.next(res.data);
+    },
+    // 失败就抛错
+    function rejected(err)=>{
+        iter.throw(err);
+    }
+)
+```
+
+- 可以看到我们的生成器函数依旧是优雅的同步代码，而异步代码我们已经用可信任的promise替换掉了。
+- 整体的执行流程和回调+Generator类似：
+- var data -> ajax('/api' -> 得到不可再变的成功状态) -> 给data赋值 -> alert(data)
+
+- 我们觉得有点恶心的地方在于，我们需要在优雅的生成器函数的背后，编写promise的then方法以期得到需要的promise（iter.next().value）
+
+```javascript
+function run(main) {
+    // args取到了可能要传给生成器函数的参数
+    var args = [].slice.call(arguments, 1), iter;
+    // 调用生成器函数得到迭代器
+    iter = main.apply(this, args);
+    return Promise.resolve().then(
+        function handleNext(data) {
+            var next = iter.next(data);
+            return (function handleResult(next) {
+                if(next.done) {
+                    return next.value;
+                } else {
+                    
+                }
+            })
+        }
+    )
+
+}
+```
 
 ### async/await
+
+
+### 实际应用里
