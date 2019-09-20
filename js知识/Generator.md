@@ -6,15 +6,15 @@
 
 - 未声明：
 
-![avatar](../static/generator_1.png)
+![avatar](../static/generator_1.PNG)
 
 - 未赋值：
 
-![avatar](../static/generator_2.png)
+![avatar](../static/generator_2.PNG)
 
 - 当执行一个表达式：var a = 12; 右侧未返回值时变量处于已声明未赋值状态。
 
-![avatar](../static/generator_3.png)
+![avatar](../static/generator_3.PNG)
 
 ## 接下来看生成器函数的使用
 
