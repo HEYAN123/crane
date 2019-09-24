@@ -1,13 +1,16 @@
 // https://github.com/YvetteLau/Blog/issues/7
 
-function myNew(func) {
-    // 创建一个新对象
-    let target = {};
-    // 原型链接 实例的__proto__指向构造函数的prototype
-    target.__proto__ = func.prototype;
-    // this指向这个新对象
-    let res = func.call(target);
-    // 如果函数没有返回其他对象，那么new表达式中的函数调用后会返回这个新对象
+// new动作四部曲
+// 1 创建一个新对象
+// 2 原型链接
+// 3 this指向这个新对象并调用
+// 4 返回调用结果或者新对象
+
+
+function myNew(fn) {
+    var target = {};
+    target.__proto__ = fn.prototype;
+    var res = fn.call(target);
     if(typeof res === 'object' || typeof res === 'function') {
         return res;
     }

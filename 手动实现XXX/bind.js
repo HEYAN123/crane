@@ -5,6 +5,9 @@
 // 之后的一系列参数会在传递的实参前传入作为它的参数
 // 函数中的return除非返回的是个对象，否则通过new返回的是个this，指向空对象，空对象原型指向原函数的prototype。
 
+
+
+
 Function.prototype.bind = function(context) {
     // 检查xxx.bind中xxx是否是正确的函数类型
     if(typeof this !== 'function') {

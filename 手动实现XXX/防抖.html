@@ -10,6 +10,44 @@
     
 </body>
 <script>
+    // 在事件触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时
+
+var debounce = function(time, action) {
+    var last;
+    return function() {
+        var ctx = this, args = arguments;
+        clearTimeout(last);
+        last = setTimeout(()=>{
+            action.apply(ctx, args);
+        }, time);
+    }
+}
+
+var debounce = function(time, action) {
+    var last;
+    return function() {
+        var ctx = this, args = arguments;
+        clearTimeout(last);
+        last = setTimeout(()=>{
+            action.apply(ctx, args);
+        }, time);
+    }
+}
+
+var debounce = function(time, action) {
+    var last;
+    return function() {
+        var ctx = this, args = arguments;
+        clearTimeout(last);
+        last = setTimeout(function() {
+            action.apply(ctx, args);
+        }, time);
+    }
+}
+
+
+
+
 var debounce = function(time, action) {
     var last;
     return function() {

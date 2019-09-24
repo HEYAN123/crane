@@ -10,16 +10,17 @@
     
 </body>
 <script>
+// 规定在一个单位时间内只能触发一次函数。如果这个单位时间内多次触发函数，那就只有一次会生效
 
 var throttle = function(time, action) {
-    var last = 0;
-    return function() {
-        var curr = new Date();
-        if(curr-last>time) {
-            action.apply(this, arguments) {
-                last = curr;
-            }
-        }
+    let flag = true;
+    return (...args)=>{
+        if(!flag) return;
+        flag = false;
+        setTimeout(()=>{
+            action.apply(this,args);
+            flag = true;
+        }, time);
     }
 }
 
