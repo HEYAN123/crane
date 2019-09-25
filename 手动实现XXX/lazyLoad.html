@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+img {
+    display: block;
+}
+</style>
+<!-- 懒加载原理：
+一张图片就是一个img标签，浏览器根据src发起请求图片，
+所以实现懒加载的关键在于图片没有进入可视区域时不给src赋值，
+进入可视区域时赋值，就会请求图片 -->
+
+<!-- 实现懒加载的四个步骤：
+1. 加载loading图片
+2. 判断哪些图片需要加载
+3. 隐形加载图片
+4. 替换真图片 -->
+<body>
+<!-- 加载loading图片是在html部分实现 -->
+    <div class="imglist">
+        <img class="lazy" src="../static/loading.gif" alt="pic" data-src="../static/loading1.PNG">
+        <img class="lazy" src="../static/loading.gif" alt="pic" data-src="../static/loading2.PNG">
+        <img class="lazy" src="../static/loading.gif" alt="pic" data-src="../static/loading3.PNG">
+        <img class="lazy" src="../static/loading.gif" alt="pic" data-src="../static/loading4.PNG">
+        <img class="lazy" src="../static/loading.gif" alt="pic" data-src="../static/loading5.PNG">
+        <img class="lazy" src="../static/loading.gif" alt="pic" data-src="../static/loading6.PNG">
+    </div>
+</body>
+<!-- 与可视区域相关的api
+可视窗口高度：window.innerHeight
+滚动了的高度：document.documentElement.scrollTop
+某元素距离窗口顶部的距离：e.offsetTop
+-->
+
+<!-- 判断是否到达可视区域
+可视窗口的高度 + 滚动了的高度 > 某图片距离浏览器顶部的距离
+-->
+<script>
+    // 监听onload事件
+    window.onload = function() {
+        // 选取所有图片元素
+        var imgs = document.querySelectorAll('img');
+
+        // 获取元素到浏览器顶部的距离
+        function getTop(e) {
+            return e.offsetTop;
+        }
+        // 实现懒加载
+        function lazyLoad(imgs) {
+            // 获取可视窗口高度
+            var h = window.innerHeight;
+            // 获取滚动了的高度
+            var scrollh = document.documentElement.scrollTop || document.body.scrollTop
+            // 遍历处理图片元素
+            for(var i = 0; i < imgs.length; i ++) {
+                // 如果图片i到达可视区域，就立即加载该图片
+                if((h + scrollh) > getTop(imgs[i])) {
+                    (function (i) {
+                        setTimeout(function() {
+                            var temp = new Image();
+                            temp.src = imgs[i].getAttribute('data-src');
+                            temp.onload = function() {
+                                imgs[i].src = imgs[i].getAttribute('data-src');
+                            }
+                        }, 0);
+                    })(i);
+                }
+            }
+        }
+
+        // 针对首屏执行一次
+        lazyLoad(imgs);
+
+        // 节流
+        var throttle = function(time, action, args) {
+            var start = Date.now();
+            return function () {
+                var now = Date.now();
+                if(now-start > time) {
+                console.log(action, args);
+                    action.call(this, args);
+                    start = now;
+                }
+            }
+        };
+
+        // 监听滚屏 绑定的方法实际是throttle返回的函数
+        window.onscroll = throttle(1000, lazyLoad, imgs);
+    }
+</script>
+
+</html>

@@ -13,16 +13,15 @@
 // 规定在一个单位时间内只能触发一次函数。如果这个单位时间内多次触发函数，那就只有一次会生效
 
 var throttle = function(time, action) {
-    let flag = true;
-    return (...args)=>{
-        if(!flag) return;
-        flag = false;
-        setTimeout(()=>{
-            action.apply(this,args);
-            flag = true;
-        }, time);
+    var start = Date.now();
+    return function (...args) {
+        var now = Date.now();
+        if(now-start > time) {
+            action.apply(this, args);
+            start = now;
+        }
     }
-}
+};  
 
 </script>
 </html>
