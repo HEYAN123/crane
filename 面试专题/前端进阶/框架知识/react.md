@@ -26,3 +26,81 @@
 
 - dom里的value不与state捆绑，用表单的ref属性操作dom和属性值
 
+## 组件传值
+
+### 父传子
+
+- 通过props传递
+
+### 子传父
+
+- 通过回调函数传递
+
+### 平级传
+
+1. 设置共同的父组件然后按子传父->父传子传递
+2. context+高阶组件
+
+```javascript
+// 伪代码：
+// context.js
+import React from 'react';
+export const myContext = React.createContext({
+    switch: true;
+})
+
+// 父组件 控制context内的值
+import React, { Component } from "react";
+import { myContext } from "context.js";
+class Parent extends Component {
+    state = {
+        switch: false;
+    }
+
+    render() {
+        const { switch } = this.state;
+        return (
+            <myContext.Provider value={switch}>
+
+            </myContext.Provider>
+        )
+    }
+}
+
+// addSwitch.js 高阶组件输出函数
+import React, { Component } from "react";
+import { myContext } from "context.js";
+
+export function addSwitch(Item) {
+    return class extends Component {
+        static contextType = myContext;
+        render() {
+            return (
+                <Item
+                {...this.props}
+                switch={this.context.switch}
+                >
+                </Item>
+            )
+        }
+    }
+}
+
+
+// 子组件A
+import React, { Component } from "react";
+import { addSwitch} from "addSwitch.js";
+
+class ChildA extends Component {
+    state = {
+        switch: this.props.switch
+    }
+
+}
+
+export default addSwitch(ChildA);
+
+```
+
+3. redux
+4. hooks
