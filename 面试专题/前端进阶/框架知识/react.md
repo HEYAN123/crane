@@ -8,6 +8,12 @@
 
 ![avatar](../../../static/react.PNG)
 
+组件就是有限状态机：表示有限个状态以及在这些状态之间的转移和动作等行为的模型
+
+状态机能够记住目前所处的状态，可以根据当前的状态做出相应的决策，并可以在进入不同的状态时做不同的操作。React正是利用这一概念，通过管理设置状态来实现对组件的管理，并且引入生命周期，通过生命周期来实现组件的状态机控制（状态的转换和操作）
+
+
+
 ### state
 
 - 一个组件自身的数据模型，组件可以把自身需要的数据保存到自身的state上使用。是否拥有state也决定了此组件的类型：状态组件/无状态组件。
@@ -253,3 +259,69 @@ _mountChildAtIndex: function(child, afterNode, index, transaction, context) {
 }
 
 ```
+
+## Patch
+
+Patch,它将差异队列更新到真实的DOM节点上，最终让浏览器能够渲染出更新的数据
+
+React并不是计算出一个差异就去执行一次patch，而是计算出全部差异并放入差异队列后，再一次性地去执行Patch方法完成真实DOM的更新
+
+Patch方法代码如下：
+
+```js
+processUpdates: function(parentNode, updates) {
+    // 处理新增、移动以及需要删除的节点
+    for(var k = 0; k < updates.length; k++) {
+        var update = updates[k];
+        switch (update.type) {
+            // 插入新节点
+            case ReactMultiChildUpdateTypes.INSERT_MARKUP:
+                insertLazyTreeChildAt(
+                    parentNode,
+                    update.content,
+                    getNodeAfter(parentNode, update.after)
+                );
+                break;
+            // 移动节点
+            case 
+
+            case
+            // 删除节点
+        }
+    }
+}
+```
+
+调和：reconciliation，是指将vDoM转化为Adom的最少操作，diff算法就是调和的具体实现
+
+diff基于的三个策略：
+
+1. WebUI中的节点跨层级的移动操作非常少，可以忽略不计 ->tree diff优化
+2. 拥有相同类的两个组件将会生成相似的树形结构，拥有不同类的两个组件将会生成不同的树形结构 -> component diff优化
+3. 对于同一层级的一组子节点，他们可以通过唯一id进行区分 -> element diff优化
+
+### tree diff
+
+对树的算法进行了简洁明了的优化，即对树进行分层比较，两棵树只会对同一层次的节点进行比较
+
+```js
+updateChildren: function(next)
+```
+
+react只会简单地考虑同层级节点的位置变换，而对于不同层级的节点，只有创建和删除操作，因此不建议DOM跨层级的操作
+
+### component diff
+
+组件间的比较：
+
+1. 如果是同一类的组件，则按照原策略继续比较vdom树即可
+2. 如果不是同一类组件，则将该组件判定为dirty component，从而替换整个组件下的所有子节点
+3. 对于同一类型的组件，有可能其vdom没有任何变化，如果能确切知道这一点就可以节约diff时间，因此react允许用户通过shouldComponentUpdate来判断该组件是否需要diff
+
+### element diff
+
+当节点处于同一层级时，diff提供了三种节点操作：插入，移动，删除
+
+
+
+
