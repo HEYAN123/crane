@@ -8,7 +8,7 @@ const JSONP = function(url, data) {
         // 回调函数的名字
         let cbName = `jsonp_${Date.now()}`;
         // 拼接回调函数
-        url += `${connect}}callback=${cbName}`;
+        url += `${connect}callback=${cbName}`;
         // 有请求参数的话再拼接上去
         if(data) {
             for(let k in data) {
