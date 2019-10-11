@@ -332,7 +332,7 @@ iter.next(); // {value: 3, done: false}
 #### 简单认识Generator
 
 - Generator最大的特点就是能控制程序的运行与暂停，就像debug一样：打一个断点，然后可以控制程序按我们的意愿走走停停。
-- 详细分析Generator的运行流程可以参考我之前写的一篇分析：[Generator执行流程](../../../js知识/Generator.md)，更深入建议参考阮一峰的ES6入门，这里只做简单介绍：
+- 详细分析Generator的运行流程可以参考我之前写的一篇分析：[Generator执行流程](./Generator.md)，更深入建议参考阮一峰的ES6入门，这里只做简单介绍：
 
 ```javascript
 // 加了*号表示这是一个生成器函数
