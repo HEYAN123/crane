@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>骰子布局</title>
+    <style>
+        .part {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        /* 黑点样式 */
+        .point {
+            width: 20px;
+            height: 20px;
+            margin: 5px 5px;
+            border-radius: 10px;
+            background-color: black;
+        }
+        /* 面样式 */
+        .side {
+            width: 90px;
+            height: 90px;
+            border-radius: 5px;
+            background-color: #dddddd;
+            border: 5px solid #eeeeee;
+            
+        }
+        .onePoint1 {
+            display: flex;
+        }
+        .onePoint2 {
+            display: flex;
+            justify-content: center;
+        }
+        .onePoint3 {
+            display: flex;
+            align-items: center;
+        }
+        .onePoint4 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .onePoint5 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        /* --------------------------------- */
+        .twoPoint1 {
+            display: flex;
+            justify-content: space-between;
+        }
+        .twoPoint2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .twoPoint3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .twoPoint4 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .twoPoint5 {
+            display: flex;
+            flex-direction: column;
+        }
+        .twoPoint5 .point:nth-child(2) {
+            align-self: center;
+        }
+        .twoPoint6 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .twoPoint6 .point:nth-child(2) {
+            align-self: flex-end;
+        }
+        /* ------------------------------------- */
+        .threePoint1 {
+            display: flex;
+            justify-content: space-between;
+        }
+        .threePoint1 .point:nth-child(2) {
+            align-self: center;
+        }
+        .threePoint1 .point:nth-child(3) {
+            align-self: flex-end;
+        }
+        /* -------------------------------------- */
+        .fourPoint1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-content: space-between;
+
+        }
+        .fourPoint2 {
+            display: flex;
+            justify-content: space-between;
+        }
+        .fourPoint2 .column {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        /* ------------------------------------- */
+        .sixPoint1 {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+        .sixPoint2 {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-content: space-between;
+        }
+        .sixPoint3 .row {
+            display: flex;
+            justify-content: space-between;
+
+        }
+        .sixPoint3 .row:nth-child(2) {
+            justify-content: center;
+        }
+        /* --------------------------------------- */
+        .ninePoint1 {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <p>这里练习一下阮一峰的flex教程实例，地址：http://www.ruanyifeng.com/blog/2015/07/flex-examples.htmlhttp://www.ruanyifeng.com/blog/2015/07/flex-examples.html</p>
+    <br>
+
+    <p>一点：</p>
+    <div class="part">
+        <div class="side onePoint1">
+            <div class="point"></div>
+        </div>
+        <div class="side onePoint2">
+            <div class="point"></div>
+        </div>
+        <div class="side onePoint3">
+            <div class="point"></div>
+        </div>
+        <div class="side onePoint4">
+            <div class="point"></div>
+        </div>
+        <div class="side onePoint5">
+            <div class="point"></div>
+        </div>
+    </div>
+    
+    <p>两点：</p>
+    <div class="part">
+        <div class="side twoPoint1">
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+        <div class="side twoPoint2">
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+        <div class="side twoPoint3">
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+        <div class="side twoPoint4">
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+        <div class="side twoPoint5">
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+        <div class="side twoPoint6">
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+    </div>
+    <p>三点：</p>
+    <div class="part">
+        <div class="side threePoint1">
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+    </div>
+    <p>四点：</p>
+    <div class="part">
+        <div class="side fourPoint1">
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+        <div class="side fourPoint2">
+            <div class="column">
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+            <div class="column">
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+           
+        </div>
+    </div>
+    <p>六点：</p>
+    <div class="part">
+        <div class="side sixPoint1">
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+        <div class="side sixPoint2">
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+        </div>
+        <div class="side sixPoint3">
+            <div class="row">
+                    <div class="point"></div>
+                    <div class="point"></div>
+                    <div class="point"></div>
+            </div>
+            <div class="row">
+                    <div class="point"></div>
+            </div>
+            <div class="row">
+                    <div class="point"></div>
+                    <div class="point"></div>
+            </div>
+        </div>
+    </div>
+    <p>九点：</p>
+    <div class="part">
+        <div class="side ninePoint1">
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+            <div class="point"></div>
+        </div>
+    </div>
+</body>
+</html>
