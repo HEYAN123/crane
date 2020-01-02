@@ -26,3 +26,4 @@
 
 - 两种写法的区别：
 
+1. 运作不同：function会直接返回一个调用react方法生成的react组件片段；class会
