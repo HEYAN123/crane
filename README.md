@@ -32,10 +32,11 @@
   - [排序](./算法/sort.md)
 - [源码资料](./源码资料)
 - [static](./static)
-- [diary](./diary.md)
 
 ## 更新记录
 
+- 2019.01.03
+  - 博文：es6之decorator
 - 2019.01.02
   - 博文：es6之symbol，hooks
 - 2019.12.31
