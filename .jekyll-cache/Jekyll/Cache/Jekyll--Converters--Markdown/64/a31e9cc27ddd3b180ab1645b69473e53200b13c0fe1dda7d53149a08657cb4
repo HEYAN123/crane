@@ -1,0 +1,100 @@
+I"<ul id="markdown-toc">
+  <li><a href="#Thanks" id="markdown-toc-Thanks">致谢</a></li>
+  <li><a href="#How-to-use" id="markdown-toc-How-to-use">使用</a>    <ul>
+      <li><a href="#Download" id="markdown-toc-Download">下载</a></li>
+      <li><a href="#Configuration" id="markdown-toc-Configuration">配置</a></li>
+      <li><a href="#How-to-write-document" id="markdown-toc-How-to-write-document">如何写文章</a></li>
+      <li><a href="#execute" id="markdown-toc-execute">执行</a></li>
+      <li><a href="#result" id="markdown-toc-result">效果</a></li>
+    </ul>
+  </li>
+  <li><a href="#why" id="markdown-toc-why">为什么重复造轮子</a></li>
+  <li><a href="#about-author" id="markdown-toc-about-author">关于作者</a></li>
+</ul>
+
+<h1 id="Thanks">致谢</h1>
+<ul>
+  <li>感谢<a href="http://lesscss.cn/">Less官网</a>的样式，本Jekyll框架的样式都是基于Less官网的样式直接拷贝过来的。只是重构了JS，并且加入了Jekyll语法而已。</li>
+  <li>感谢<a href="https://github.com/">Github</a>提供的代码维护和发布平台</li>
+  <li>感谢<a href="https://jekyllrb.com/">Jekyll</a>团队做出如此优秀的产品</li>
+  <li>感谢<a href="https://github.com/mattvh/solar-theme-jekyll">Solar</a>的原作者<a href="http://www.webmaster-source.com/">Matt Harzewski</a>，在<code class="language-plaintext highlighter-rouge">2014.11</code>-<code class="language-plaintext highlighter-rouge">2016.09</code>的两年间，我的博客选用了此样式模版</li>
+</ul>
+
+<h1 id="How-to-use">使用</h1>
+
+<h2 id="Download">下载</h2>
+
+<p>使用git从<a href="https://github.com/luoyan35714/LessOrMore.git">LessOrMore</a>主页下载项目</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/luoyan35714/LessOrMore.git
+</code></pre></div></div>
+
+<h2 id="Configuration">配置</h2>
+
+<p><code class="language-plaintext highlighter-rouge">LessOrMore</code>项目需要配置的只有一个文件<code class="language-plaintext highlighter-rouge">_config.yml</code>，打开之后按照如下进行配置。</p>
+
+<blockquote>
+  <p>特别注意<code class="language-plaintext highlighter-rouge">baseurl</code>的配置。如果是<code class="language-plaintext highlighter-rouge">***.github.io</code>项目，不修改为空’‘的话，会导致JS,CSS等静态资源无法找到的错误</p>
+</blockquote>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>name: 博客名称
+email: 邮箱地址
+author: 作者名
+url: 个人网站
+<span class="c">### baseurl修改为项目名，如果项目是'***.github.io'，则设置为空''</span>
+baseurl: <span class="s2">"/LessOrMore"</span>
+resume_site: 个人简历网站
+github: github地址
+github_username: github用户名称
+FB:
+  comments :
+    provider : duoshuo
+    duoshuo:
+        short_name : 多说账户
+    disqus :
+        short_name : Disqus账户
+</code></pre></div></div>
+
+<h2 id="How-to-write-document">如何写文章</h2>
+
+<p>在<code class="language-plaintext highlighter-rouge">LessOrMore/_posts</code>目录下新建一个文件，可以创建文件夹并在文件夹中添加文件，方便维护。在新建文件中粘贴如下信息，并修改以下的<code class="language-plaintext highlighter-rouge">titile</code>,<code class="language-plaintext highlighter-rouge">date</code>,<code class="language-plaintext highlighter-rouge">categories</code>,<code class="language-plaintext highlighter-rouge">tag</code>的相关信息，添加<code class="language-plaintext highlighter-rouge">* content {:toc}</code>为目录相关信息，在进行正文书写前需要在目录和正文之间输入至少2行空行。然后按照正常的Markdown语法书写正文。</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">---</span>
+layout: post
+<span class="c">#标题配置</span>
+title:  标题
+<span class="c">#时间配置</span>
+<span class="nb">date</span>:   2016-08-27 01:08:00 +0800
+<span class="c">#大类配置</span>
+categories: document
+<span class="c">#小类配置</span>
+tag: 教程
+<span class="nt">---</span>
+
+<span class="k">*</span> content
+<span class="o">{</span>:toc<span class="o">}</span>
+
+
+我是正文。我是正文。我是正文。我是正文。我是正文。我是正文。
+</code></pre></div></div>
+
+<h2 id="execute">执行</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll server
+</code></pre></div></div>
+
+<h2 id="result">效果</h2>
+<p>打开浏览器并输入URL<code class="language-plaintext highlighter-rouge">http://localhost:4000/</code>,回车。</p>
+
+<h1 id="why">为什么重复造轮子</h1>
+
+<p>很明显，我在重复造轮子。在13年接触到GIT，14年末接触到Jekyll，然后搭建了自己的博客，当时是选用了<a href="http://jekyllthemes.org/">JekyllThemes</a>上的<a href="https://github.com/mattvh/solar-theme-jekyll">Solar</a>主题，一直到现在。不过中间一直感觉页面风格还是偏暗，阅读不方便。并且有一些小的细节做的不是很好。在页面的跨平台浏览上有一些瑕疵。并且不区分一级标题和二级标题，导致没有重点强调。诸如此类，用了2年，用的越多，越发吃力，中间就一直在寻找新的能够让我一眼认定的主题。</p>
+
+<p>虽然设计好看的主题很多。但是真正适合拿来做博客的却不多。中间一直没有找到合适的主题。直到有一天看到Less官网的主题之后，豁然觉得这就是我的博客想要的样子。简单而又不平凡。所以就决定了要把博客迁移到这个主题，然后拿了两天晚上来把这个主题做出来。</p>
+
+<p>重复造了轮子，但是这个是迄今为止自己觉得最适合我的博客的轮子，所以是值得的！</p>
+
+<h1 id="about-author">关于作者</h1>
+
+<p>热爱开源，热爱折腾的Java程序猿。更多个人信息和联系方式可以参照<a href="http://www.hifreud.com/Resume.io/">我的简介</a>。</p>
+:ET
