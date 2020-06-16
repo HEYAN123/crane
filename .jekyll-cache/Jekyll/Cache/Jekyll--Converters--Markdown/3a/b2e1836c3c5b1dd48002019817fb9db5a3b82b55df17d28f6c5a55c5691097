@@ -1,4 +1,4 @@
-I"~<ul id="markdown-toc">
+I"G<ul id="markdown-toc">
   <li><a href="#say-goodbyte" id="markdown-toc-say-goodbyte">挥别</a></li>
   <li><a href="#choose" id="markdown-toc-choose">选择</a></li>
   <li><a href="#yungentie" id="markdown-toc-yungentie">网易云跟帖</a>    <ul>
@@ -34,27 +34,27 @@
 
 <p>使用自己的账号登录<a href="https://gentie.163.com/">https://gentie.163.com/</a>，然后点击右上角的<code class="language-plaintext highlighter-rouge">后台管理</code></p>
 
-<p><img src="/LessOrMore/styles/images/yungentie/01.png" alt="/styles/images/yungentie/01.png" /></p>
+<p><img src="/styles/images/yungentie/01.png" alt="/styles/images/yungentie/01.png" /></p>
 
 <h2 id="init-yungentie">初始化</h2>
 
 <p>如果是第一次登录云跟帖会提示完善站点基本信息。</p>
 
-<p><img src="/LessOrMore/styles/images/yungentie/02.png" alt="/styles/images/yungentie/01.png" /></p>
+<p><img src="/styles/images/yungentie/02.png" alt="/styles/images/yungentie/01.png" /></p>
 
 <p>完成之后点击<code class="language-plaintext highlighter-rouge">获取代码</code>，选择合适的皮肤进行设置，本博客是蓝色，固定位置。</p>
 
-<p><img src="/LessOrMore/styles/images/yungentie/03.png" alt="/styles/images/yungentie/01.png" /></p>
+<p><img src="/styles/images/yungentie/03.png" alt="/styles/images/yungentie/01.png" /></p>
 
 <h2 id="import-yungentie">复制引入代码</h2>
 
 <p>点击<code class="language-plaintext highlighter-rouge">WEB代码</code>, 在右侧的<code class="language-plaintext highlighter-rouge">跟贴完整模块代码(Web单独版)</code>中复制展示框中的代码</p>
 
-<p><img src="/LessOrMore/styles/images/yungentie/04.png" alt="/styles/images/yungentie/01.png" /></p>
+<p><img src="/styles/images/yungentie/04.png" alt="/styles/images/yungentie/01.png" /></p>
 
 <h2 id="change-template-code">修改模板代码</h2>
 
 <p>修改<code class="language-plaintext highlighter-rouge">_includes/LessOrMore/comments-providers/yungentie</code>文件中的内容，将文件中的代码全部删除，并粘贴刚刚从云跟帖网站复制的代码。</p>
 
-<p><img src="/LessOrMore/styles/images/yungentie/05.png" alt="/styles/images/yungentie/01.png" /></p>
+<p><img src="/styles/images/yungentie/05.png" alt="/styles/images/yungentie/01.png" /></p>
 :ET
