@@ -3460,7 +3460,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
   z-index: 1000;
   min-height: 60px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
 }
 .navbar:before,
 .navbar:after {
@@ -3881,8 +3880,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
   color: #333333;
 }
 .navbar-inverse {
-  background-color: #1d365d;
-  border-color: #111f36;
+  background-color: #d996a3;
+  border-color: #ebcdc3;
 }
 .navbar-inverse .navbar-brand {
   color: #b9c8e0;
@@ -6315,8 +6314,8 @@ hr {
 }
 .docs-header,
 .docs-home {
-  color: #b9c8e0;
-  background-color: #1d365d;
+  color: #fff;
+  background-color: #d996a3;
 }
 /* Page headers */
 .docs-header {
@@ -6510,10 +6509,8 @@ hr {
   }
 }
 .docs-nav {
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
-  background-color: #1d365d;
-  border-color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.07);
+  background-color: #d996a3;
+  box-shadow: 0 0 .8rem .01rem rgba(0, 0, 0, 0.175);
 }
 .docs-nav .navbar-collapse {
   border-color: #111f36;
@@ -6530,7 +6527,7 @@ hr {
 }
 .docs-nav .navbar-nav > li > a,
 .docs-nav .navbar-nav > li > span {
-  color: #b9c8e0;
+  color: #fff;
 }
 .docs-nav .navbar-nav > li > a:hover,
 .docs-nav .navbar-nav > li > span:hover {
