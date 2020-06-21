@@ -2,12 +2,13 @@
 layout: default
 ---
 
+<!-- 主页 -->
  <div class="container docs-container">
       <div class="row">
         <div class="col-md-3">
           <div class="sidebar hidden-print" role="complementary">
             <div id="navigation">
-              <h1>目录</h1>
+              <h1>索引</h1>
               <ul class="nav sidenav">
                 {% for post in site.posts  %}
                   {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}

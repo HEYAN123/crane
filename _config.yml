@@ -1,15 +1,16 @@
-# Site settings
+# 网站配置 由site.xx访问到
 name: Crane
 email: 490817982@qq.com
-author: Heyan
+author: 贺妍
 url: http://www.hifreud.com
 # resume_site: http://www.hifreud.com/Resume.io/
-github: https://github.com/luoyan35714/
+github: https://github.com/HEYAN123/
 baseurl: "/crane"
 description: Actually, less is more!
 meta_description: 康志华;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休
 motto: It's our wits that make us men.
 banner: 学而不思则罔，思而不学则殆。
+tech: ['css']
 
 #permalink: /:categories/:year/:month/:day/:title/
 permalink: /:year/:month/:day/:title/
@@ -19,8 +20,11 @@ exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
 
 github_username: HEYAN123
 
-# Build settings
-markdown: kramdown
+# 编译配置------------------
 
-baidu_analysis: 94be4b0f9fc5d94cc0d0415ea6761ae9
+# 解析器
+markdown: kramdown
+# 插件
+plugins: [jekyll-paginate]
+
 

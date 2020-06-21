@@ -1,4 +1,4 @@
-I"<ul id="markdown-toc">
+I"<ul id="markdown-toc">
   <li><a href="#Thanks" id="markdown-toc-Thanks">致谢</a></li>
   <li><a href="#How-to-use" id="markdown-toc-How-to-use">使用</a>    <ul>
       <li><a href="#Download" id="markdown-toc-Download">下载</a></li>
@@ -12,7 +12,8 @@
   <li><a href="#about-author" id="markdown-toc-about-author">关于作者</a></li>
 </ul>
 
-<h1 id="Thanks">致谢</h1>
+<h2 id="Thanks">致谢</h2>
+
 <ul>
   <li>感谢<a href="http://lesscss.cn/">Less官网</a>的样式，本Jekyll框架的样式都是基于Less官网的样式直接拷贝过来的。只是重构了JS，并且加入了Jekyll语法而已。</li>
   <li>感谢<a href="https://github.com/">Github</a>提供的代码维护和发布平台</li>
