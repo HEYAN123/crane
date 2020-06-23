@@ -1,5 +1,15 @@
 # Crane
 
+## 启动
+
+```bash
+npm serve
+```
+
+## TODO
+
+- 图标替换
+
 ## 路径
 
 _posts 博客内容
