@@ -20,14 +20,19 @@
 	<!--[if lt IE 9]>
     	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   	<![endif]-->
-  	<script>
-		var _hmt = _hmt || [];
-		(function() {
-		  var hm = document.createElement("script");
-		  hm.src = "//hm.baidu.com/hm.js?{{ site.baidu_analysis }}";
-		  var s = document.getElementsByTagName("script")[0]; 
-		  s.parentNode.insertBefore(hm, s);
-		})();
+	<script>
+		// 判断全屏状态
+		function checkFull() {
+			var isFull = document.fullScreen || document.webkitIsFullScreen || document.msFullscreen;
+			if (isFull === undefined) {isFull = false;}
+			return isFull;
+		}
+		//监听退出全屏事件
+		window.onresize = function() {
+			if (!checkFull()) {
+				document.querySelector('.docs-content').classList.remove('scroll');
+			}
+		}
 	</script>
   	<style type="text/css">
 	  	.docs-content{
