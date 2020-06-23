@@ -1,0 +1,1621 @@
+I" q<ul id="markdown-toc">
+  <li><a href="#1-输出是什么" id="markdown-toc-1-输出是什么">1. 输出是什么？</a>    <ul>
+      <li><a href="#答案" id="markdown-toc-答案">答案</a></li>
+      <li><a href="#解析" id="markdown-toc-解析">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#2-输出是什么-" id="markdown-toc-2-输出是什么-">2. 输出是什么 ？</a>    <ul>
+      <li><a href="#答案-1" id="markdown-toc-答案-1">答案</a></li>
+      <li><a href="#解析-1" id="markdown-toc-解析-1">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#3-输出什么" id="markdown-toc-3-输出什么">3. 输出什么？</a>    <ul>
+      <li><a href="#答案-2" id="markdown-toc-答案-2">答案</a></li>
+      <li><a href="#解析-2" id="markdown-toc-解析-2">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#4-输出什么" id="markdown-toc-4-输出什么">4. 输出什么？</a>    <ul>
+      <li><a href="#答案-3" id="markdown-toc-答案-3">答案</a></li>
+      <li><a href="#解析-3" id="markdown-toc-解析-3">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#5-哪个是无效的" id="markdown-toc-5-哪个是无效的">5. 哪个是无效的？</a>    <ul>
+      <li><a href="#答案-4" id="markdown-toc-答案-4">答案</a></li>
+      <li><a href="#解析-4" id="markdown-toc-解析-4">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#6-输出是什么" id="markdown-toc-6-输出是什么">6. 输出是什么？</a>    <ul>
+      <li><a href="#答案-5" id="markdown-toc-答案-5">答案</a></li>
+      <li><a href="#解析-5" id="markdown-toc-解析-5">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#7-输出什么" id="markdown-toc-7-输出什么">7. 输出什么？</a>    <ul>
+      <li><a href="#答案-6" id="markdown-toc-答案-6">答案</a></li>
+      <li><a href="#解析-6" id="markdown-toc-解析-6">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#8-输出什么" id="markdown-toc-8-输出什么">8. 输出什么？</a>    <ul>
+      <li><a href="#答案-7" id="markdown-toc-答案-7">答案</a></li>
+      <li><a href="#解析-7" id="markdown-toc-解析-7">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#9-输出什么" id="markdown-toc-9-输出什么">9. 输出什么？</a>    <ul>
+      <li><a href="#答案-8" id="markdown-toc-答案-8">答案</a></li>
+      <li><a href="#解析-8" id="markdown-toc-解析-8">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#10-当我们这么做时会发生什么" id="markdown-toc-10-当我们这么做时会发生什么">10. 当我们这么做时会发生什么？</a>    <ul>
+      <li><a href="#答案-9" id="markdown-toc-答案-9">答案</a></li>
+      <li><a href="#解析-9" id="markdown-toc-解析-9">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#11-输出什么" id="markdown-toc-11-输出什么">11. 输出什么？</a>    <ul>
+      <li><a href="#答案-10" id="markdown-toc-答案-10">答案</a></li>
+      <li><a href="#解析-10" id="markdown-toc-解析-10">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#12-输出什么" id="markdown-toc-12-输出什么">12. 输出什么？</a>    <ul>
+      <li><a href="#答案-11" id="markdown-toc-答案-11">答案</a></li>
+      <li><a href="#解析-11" id="markdown-toc-解析-11">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#13-事件传播的三个阶段是什么" id="markdown-toc-13-事件传播的三个阶段是什么">13. 事件传播的三个阶段是什么？</a>    <ul>
+      <li><a href="#答案-12" id="markdown-toc-答案-12">答案</a></li>
+    </ul>
+  </li>
+  <li><a href="#14-所有的对象都有原型吗" id="markdown-toc-14-所有的对象都有原型吗">14. 所有的对象都有原型吗？</a>    <ul>
+      <li><a href="#答案-13" id="markdown-toc-答案-13">答案</a></li>
+      <li><a href="#解析-12" id="markdown-toc-解析-12">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#15-输出什么" id="markdown-toc-15-输出什么">15. 输出什么？</a>    <ul>
+      <li><a href="#答案-14" id="markdown-toc-答案-14">答案</a></li>
+      <li><a href="#解析-13" id="markdown-toc-解析-13">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#16-输出什么" id="markdown-toc-16-输出什么">16. 输出什么？</a>    <ul>
+      <li><a href="#答案-15" id="markdown-toc-答案-15">答案</a></li>
+      <li><a href="#解析-14" id="markdown-toc-解析-14">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#17-输出什么" id="markdown-toc-17-输出什么">17. 输出什么？</a>    <ul>
+      <li><a href="#答案-16" id="markdown-toc-答案-16">答案</a></li>
+      <li><a href="#解析-15" id="markdown-toc-解析-15">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#18-输出什么" id="markdown-toc-18-输出什么">18. 输出什么？</a>    <ul>
+      <li><a href="#答案-17" id="markdown-toc-答案-17">答案</a></li>
+      <li><a href="#解析-16" id="markdown-toc-解析-16">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#19-输出什么" id="markdown-toc-19-输出什么">19. 输出什么？</a>    <ul>
+      <li><a href="#答案-18" id="markdown-toc-答案-18">答案</a></li>
+      <li><a href="#解析-17" id="markdown-toc-解析-17">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#20-输出什么" id="markdown-toc-20-输出什么">20. 输出什么？</a>    <ul>
+      <li><a href="#答案-19" id="markdown-toc-答案-19">答案</a></li>
+      <li><a href="#解析-18" id="markdown-toc-解析-18">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#21-输出什么" id="markdown-toc-21-输出什么">21. 输出什么？</a>    <ul>
+      <li><a href="#答案-20" id="markdown-toc-答案-20">答案</a></li>
+      <li><a href="#解析-19" id="markdown-toc-解析-19">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#22-cool_secret可访问多长时间" id="markdown-toc-22-cool_secret可访问多长时间">22. cool_secret可访问多长时间？</a>    <ul>
+      <li><a href="#答案-21" id="markdown-toc-答案-21">答案</a></li>
+      <li><a href="#解析-20" id="markdown-toc-解析-20">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#23-输出什么" id="markdown-toc-23-输出什么">23. 输出什么？</a>    <ul>
+      <li><a href="#答案-22" id="markdown-toc-答案-22">答案</a></li>
+      <li><a href="#解析-21" id="markdown-toc-解析-21">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#24-输出什么" id="markdown-toc-24-输出什么">24. 输出什么？</a>    <ul>
+      <li><a href="#答案-23" id="markdown-toc-答案-23">答案</a></li>
+      <li><a href="#解析-22" id="markdown-toc-解析-22">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#25-输出什么" id="markdown-toc-25-输出什么">25. 输出什么？</a>    <ul>
+      <li><a href="#答案-24" id="markdown-toc-答案-24">答案</a></li>
+      <li><a href="#解析-23" id="markdown-toc-解析-23">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#26-javascript全局执行上下文为你做了两件事" id="markdown-toc-26-javascript全局执行上下文为你做了两件事">26. Javascript全局执行上下文为你做了两件事</a>    <ul>
+      <li><a href="#答案-25" id="markdown-toc-答案-25">答案</a></li>
+    </ul>
+  </li>
+  <li><a href="#27-输出什么" id="markdown-toc-27-输出什么">27. 输出什么？</a>    <ul>
+      <li><a href="#答案-26" id="markdown-toc-答案-26">答案</a></li>
+      <li><a href="#解析-24" id="markdown-toc-解析-24">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#28-输出什么" id="markdown-toc-28-输出什么">28. 输出什么？</a>    <ul>
+      <li><a href="#答案-27" id="markdown-toc-答案-27">答案</a></li>
+      <li><a href="#解析-25" id="markdown-toc-解析-25">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#29-输出什么" id="markdown-toc-29-输出什么">29. 输出什么？</a>    <ul>
+      <li><a href="#答案-28" id="markdown-toc-答案-28">答案</a></li>
+      <li><a href="#解析-26" id="markdown-toc-解析-26">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#30-输出什么" id="markdown-toc-30-输出什么">30. 输出什么？</a>    <ul>
+      <li><a href="#答案-29" id="markdown-toc-答案-29">答案</a></li>
+      <li><a href="#解析-27" id="markdown-toc-解析-27">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#31-当点击按钮时eventtarget是什么" id="markdown-toc-31-当点击按钮时eventtarget是什么">31. 当点击按钮时，event.target是什么？</a>    <ul>
+      <li><a href="#答案-30" id="markdown-toc-答案-30">答案</a></li>
+      <li><a href="#解析-28" id="markdown-toc-解析-28">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#32-点击该段落时日志输出的是什么" id="markdown-toc-32-点击该段落时日志输出的是什么">32. 点击该段落时，日志输出的是什么？</a>    <ul>
+      <li><a href="#答案-31" id="markdown-toc-答案-31">答案</a></li>
+      <li><a href="#解析-29" id="markdown-toc-解析-29">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#33-输出什么" id="markdown-toc-33-输出什么">33. 输出什么？</a>    <ul>
+      <li><a href="#答案-32" id="markdown-toc-答案-32">答案</a></li>
+      <li><a href="#解析-30" id="markdown-toc-解析-30">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#34-输出什么" id="markdown-toc-34-输出什么">34. 输出什么？</a>    <ul>
+      <li><a href="#答案-33" id="markdown-toc-答案-33">答案</a></li>
+      <li><a href="#解析-31" id="markdown-toc-解析-31">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#35-下面哪些值是false" id="markdown-toc-35-下面哪些值是false">35. 下面哪些值是false？</a>    <ul>
+      <li><a href="#答案-34" id="markdown-toc-答案-34">答案</a></li>
+      <li><a href="#解析-32" id="markdown-toc-解析-32">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#36-输出什么" id="markdown-toc-36-输出什么">36. 输出什么？</a>    <ul>
+      <li><a href="#答案-35" id="markdown-toc-答案-35">答案</a></li>
+      <li><a href="#解析-33" id="markdown-toc-解析-33">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#37-输出什么" id="markdown-toc-37-输出什么">37. 输出什么？</a>    <ul>
+      <li><a href="#答案-36" id="markdown-toc-答案-36">答案</a></li>
+      <li><a href="#解析-34" id="markdown-toc-解析-34">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#38-输出什么" id="markdown-toc-38-输出什么">38. 输出什么？</a>    <ul>
+      <li><a href="#答案-37" id="markdown-toc-答案-37">答案</a></li>
+      <li><a href="#解析-35" id="markdown-toc-解析-35">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#39-js中的一切都是" id="markdown-toc-39-js中的一切都是">39. js中的一切都是？</a>    <ul>
+      <li><a href="#答案-38" id="markdown-toc-答案-38">答案</a></li>
+    </ul>
+  </li>
+  <li><a href="#40-输出什么" id="markdown-toc-40-输出什么">40. 输出什么？</a>    <ul>
+      <li><a href="#答案-39" id="markdown-toc-答案-39">答案</a></li>
+      <li><a href="#解析-36" id="markdown-toc-解析-36">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#41-输出什么" id="markdown-toc-41-输出什么">41. 输出什么？</a>    <ul>
+      <li><a href="#答案-40" id="markdown-toc-答案-40">答案</a></li>
+      <li><a href="#解析-37" id="markdown-toc-解析-37">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#42-setinterval-方法的返回值是什么" id="markdown-toc-42-setinterval-方法的返回值是什么">42. setInterval 方法的返回值是什么？</a>    <ul>
+      <li><a href="#答案-41" id="markdown-toc-答案-41">答案</a></li>
+    </ul>
+  </li>
+  <li><a href="#43-输出什么" id="markdown-toc-43-输出什么">43. 输出什么？</a>    <ul>
+      <li><a href="#答案-42" id="markdown-toc-答案-42">答案</a></li>
+      <li><a href="#解析-38" id="markdown-toc-解析-38">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#44-输出什么" id="markdown-toc-44-输出什么">44. 输出什么？</a>    <ul>
+      <li><a href="#答案-43" id="markdown-toc-答案-43">答案</a></li>
+      <li><a href="#解析-39" id="markdown-toc-解析-39">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#45-返回值是什么" id="markdown-toc-45-返回值是什么">45. 返回值是什么？</a>    <ul>
+      <li><a href="#答案-44" id="markdown-toc-答案-44">答案</a></li>
+      <li><a href="#解析-40" id="markdown-toc-解析-40">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#46-输出什么" id="markdown-toc-46-输出什么">46. 输出什么？</a>    <ul>
+      <li><a href="#答案-45" id="markdown-toc-答案-45">答案</a></li>
+      <li><a href="#解析-41" id="markdown-toc-解析-41">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#47-输出什么" id="markdown-toc-47-输出什么">47. 输出什么？</a>    <ul>
+      <li><a href="#答案-46" id="markdown-toc-答案-46">答案</a></li>
+      <li><a href="#解析-42" id="markdown-toc-解析-42">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#48-输出什么" id="markdown-toc-48-输出什么">48. 输出什么？</a>    <ul>
+      <li><a href="#答案-47" id="markdown-toc-答案-47">答案</a></li>
+      <li><a href="#解析-43" id="markdown-toc-解析-43">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#49-num的值是什么" id="markdown-toc-49-num的值是什么">49. num的值是什么？</a>    <ul>
+      <li><a href="#答案-48" id="markdown-toc-答案-48">答案</a></li>
+      <li><a href="#解析-44" id="markdown-toc-解析-44">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#50-输出什么" id="markdown-toc-50-输出什么">50. 输出什么？</a>    <ul>
+      <li><a href="#答案-49" id="markdown-toc-答案-49">答案</a></li>
+      <li><a href="#解析-45" id="markdown-toc-解析-45">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#51-输出什么" id="markdown-toc-51-输出什么">51. 输出什么？</a>    <ul>
+      <li><a href="#答案-50" id="markdown-toc-答案-50">答案</a></li>
+      <li><a href="#解析-46" id="markdown-toc-解析-46">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#52-输出什么" id="markdown-toc-52-输出什么">52. 输出什么？</a>    <ul>
+      <li><a href="#答案-51" id="markdown-toc-答案-51">答案</a></li>
+      <li><a href="#解析-47" id="markdown-toc-解析-47">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#53-输出什么" id="markdown-toc-53-输出什么">53. 输出什么？</a>    <ul>
+      <li><a href="#答案-52" id="markdown-toc-答案-52">答案</a></li>
+      <li><a href="#解析-48" id="markdown-toc-解析-48">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#54-输出什么" id="markdown-toc-54-输出什么">54. 输出什么？</a>    <ul>
+      <li><a href="#答案-53" id="markdown-toc-答案-53">答案</a></li>
+      <li><a href="#解析-49" id="markdown-toc-解析-49">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#55-输出什么" id="markdown-toc-55-输出什么">55. 输出什么？</a>    <ul>
+      <li><a href="#答案-54" id="markdown-toc-答案-54">答案</a></li>
+      <li><a href="#解析-50" id="markdown-toc-解析-50">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#56-输出什么" id="markdown-toc-56-输出什么">56. 输出什么？</a>    <ul>
+      <li><a href="#答案-55" id="markdown-toc-答案-55">答案</a></li>
+      <li><a href="#解析-51" id="markdown-toc-解析-51">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#57-输出什么" id="markdown-toc-57-输出什么">57. 输出什么？</a>    <ul>
+      <li><a href="#答案-56" id="markdown-toc-答案-56">答案</a></li>
+      <li><a href="#解析-52" id="markdown-toc-解析-52">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#58-输出什么" id="markdown-toc-58-输出什么">58. 输出什么？</a>    <ul>
+      <li><a href="#答案-57" id="markdown-toc-答案-57">答案</a></li>
+      <li><a href="#解析-53" id="markdown-toc-解析-53">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#59-输出什么" id="markdown-toc-59-输出什么">59. 输出什么？</a>    <ul>
+      <li><a href="#答案-58" id="markdown-toc-答案-58">答案</a></li>
+      <li><a href="#解析-54" id="markdown-toc-解析-54">解析</a></li>
+    </ul>
+  </li>
+  <li><a href="#60-输出什么" id="markdown-toc-60-输出什么">60. 输出什么？</a>    <ul>
+      <li><a href="#答案-59" id="markdown-toc-答案-59">答案</a></li>
+      <li><a href="#解析-55" id="markdown-toc-解析-55">解析</a></li>
+    </ul>
+  </li>
+</ul>
+
+<ul>
+  <li>题目来源：<a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md">https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md</a></li>
+</ul>
+
+<h2 id="1-输出是什么">1. 输出是什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sayHi</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">)</span>
+  <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Lydia</span><span class="dl">'</span>
+  <span class="kd">let</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">21</span>
+<span class="p">}</span>
+
+<span class="nx">sayHi</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="答案">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">undefined</span>
+<span class="nx">VM38</span><span class="p">:</span><span class="mi">3</span> <span class="nx">Uncaught</span> <span class="nx">ReferenceError</span><span class="p">:</span> <span class="nx">Cannot</span> <span class="nx">access</span> <span class="dl">'</span><span class="s1">age</span><span class="dl">'</span> <span class="nx">before</span> <span class="nx">initialization</span>
+    <span class="nx">at</span> <span class="nx">sayHi</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="mi">15</span><span class="p">)</span>
+    <span class="nx">at</span> <span class="o">&lt;</span><span class="nx">anonymous</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<h3 id="解析">解析</h3>
+
+<ul>
+  <li>var声明变量会发生变量提升。也就是var name这一部分被提升到当前作用域的顶部并且被初始化为undefined，但是赋值操作=’Lydia’没有提升，还在console.log语句后面，所以声明但未赋值的变量打印出来就是undefined</li>
+  <li>let/const声明的变量不会发生变量提升。一个let/const变量在声明之前是无法访问到的，这叫“暂时性死区”，所以在let age之前访问它时会抛出ReferenceError错误。</li>
+</ul>
+
+<hr />
+
+<h2 id="2-输出是什么-">2. 输出是什么 ？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="答案-1">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">3</span>
+<span class="mi">3</span>
+<span class="mi">3</span>
+<span class="mi">0</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+</code></pre></div></div>
+
+<h3 id="解析-1">解析</h3>
+
+<ul>
+  <li>使用var声明的i是一个全局变量，for循环的执行在执行栈中先执行，setTimeout里打印的回调函数被放到事件队列中，for循环执行完之后i这个全局变量已经自增为3，再执行事件队列里的打印程序时就会输出3次“3”</li>
+  <li>使用let声明的i是一个局部变量，每次循环回调函数记住的是该次循环的作用域块里的i值，所以打印出来的是三个不同的值。</li>
+</ul>
+
+<hr />
+
+<h2 id="3-输出什么">3. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">shape</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">radius</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="nx">diameter</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">radius</span> <span class="o">*</span> <span class="mi">2</span>
+  <span class="p">},</span>
+  <span class="na">perimeter</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="mi">2</span> <span class="o">*</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">*</span> <span class="k">this</span><span class="p">.</span><span class="nx">radius</span>
+<span class="p">}</span>
+
+<span class="nx">shape</span><span class="p">.</span><span class="nx">diameter</span><span class="p">()</span>
+<span class="nx">shape</span><span class="p">.</span><span class="nx">perimeter</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="答案-2">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">20</span>
+<span class="kc">NaN</span>
+</code></pre></div></div>
+
+<h3 id="解析-2">解析</h3>
+
+<ul>
+  <li>这里考察的是常规函数和箭头函数this的绑定机制。diameter是一个常规函数，perimeter是一个箭头函数。</li>
+  <li>常规函数this绑定于谁调用它，于是绑定在shape这个对象上，radius为10。</li>
+  <li>箭头函数this绑定于它上层作用域中的this，这里就是window，全局作用域中不存在radius，所以计算得出NaN。</li>
+</ul>
+
+<hr />
+
+<h2 id="4-输出什么">4. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">+</span><span class="kc">true</span><span class="p">;</span>
+<span class="o">!</span><span class="dl">"</span><span class="s2">Lydia</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="答案-3">答案</h3>
+
+<pre><code class="language-javascript;">1
+false
+</code></pre>
+
+<h3 id="解析-3">解析</h3>
+
+<ul>
+  <li>运算符+作用于true会将true转化为数字类型，true对应1</li>
+  <li>!会将字符串先转化为对应布尔值然后取反。非空字符串对应true，取反则为false。</li>
+</ul>
+
+<hr />
+
+<h2 id="5-哪个是无效的">5. 哪个是无效的？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">bird</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">size</span><span class="p">:</span> <span class="dl">'</span><span class="s1">small</span><span class="dl">'</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">mouse</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Mickey</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">small</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+
+<span class="nl">A</span><span class="p">:</span> <span class="nx">mouse</span><span class="p">.</span><span class="nx">bird</span><span class="p">.</span><span class="nx">size</span>
+<span class="nx">B</span><span class="p">:</span> <span class="nx">mouse</span><span class="p">[</span><span class="nx">bird</span><span class="p">.</span><span class="nx">size</span><span class="p">]</span>
+<span class="nx">C</span><span class="p">:</span> <span class="nx">mouse</span><span class="p">[</span><span class="nx">bird</span><span class="p">[</span><span class="dl">"</span><span class="s2">size</span><span class="dl">"</span><span class="p">]]</span>
+<span class="nx">D</span><span class="p">:</span> <span class="nx">All</span> <span class="k">of</span> <span class="nx">them</span> <span class="nx">are</span> <span class="nx">valid</span>
+</code></pre></div></div>
+
+<h3 id="答案-4">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">A</span>
+</code></pre></div></div>
+
+<h3 id="解析-4">解析</h3>
+
+<ul>
+  <li>[]语法寻找属性时[]内部可以有字符串，运算，变量，然后会先得出[]内的结果然后在对象上依据这个结果寻找属性。而点语法只会从对象上寻找名为点后面字符串的属性， “mouse.bird”意为mouse上找名为bird的属性，自然是没有的。</li>
+</ul>
+
+<hr />
+
+<h2 id="6-输出是什么">6. 输出是什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="p">{</span> <span class="na">greeting</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Hey!</span><span class="dl">'</span> <span class="p">}</span>
+<span class="kd">let</span> <span class="nx">d</span>
+
+<span class="nx">d</span> <span class="o">=</span> <span class="nx">c</span>
+<span class="nx">c</span><span class="p">.</span><span class="nx">greeting</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Hello</span><span class="dl">'</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">greeting</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-5">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Hello</span>
+</code></pre></div></div>
+
+<h3 id="解析-5">解析</h3>
+
+<ul>
+  <li>c是一个指针指向对象{ greeting: ‘Hey!’ }的存储地址，当d=c时d也成为了一个指针，与c共同指向该对象，当c.greeting = ‘Hello’修改对象里的内容时，d指向这个对象，自然里面的内容也是已经变了的。</li>
+</ul>
+
+<hr />
+
+<h2 id="7-输出什么">7. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Number</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="kd">let</span> <span class="nx">c</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">==</span> <span class="nx">b</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span> <span class="o">===</span> <span class="nx">b</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span> <span class="o">===</span> <span class="nx">c</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-6">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kc">true</span> <span class="kc">false</span> <span class="kc">false</span>
+</code></pre></div></div>
+
+<h3 id="解析-6">解析</h3>
+
+<ul>
+  <li>new Number(3)将基础类型number包装为一个Number对象，类型变成object</li>
+  <li>==判断会发生类型转换数字对象转化为基础类型，3等于3，true</li>
+  <li>===严格判断不会发生类型转换，基础类型不等于对象类型，所以===返回false</li>
+</ul>
+
+<hr />
+
+<h2 id="8-输出什么">8. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Chameleon</span> <span class="p">{</span>
+  <span class="kd">static</span> <span class="nx">colorChange</span><span class="p">(</span><span class="nx">newColor</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">newColor</span> <span class="o">=</span> <span class="nx">newColor</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">newColor</span>
+  <span class="p">}</span>
+
+  <span class="kd">constructor</span><span class="p">({</span> <span class="nx">newColor</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">green</span><span class="dl">'</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{})</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">newColor</span> <span class="o">=</span> <span class="nx">newColor</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">freddie</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Chameleon</span><span class="p">({</span> <span class="na">newColor</span><span class="p">:</span> <span class="dl">'</span><span class="s1">purple</span><span class="dl">'</span> <span class="p">})</span>
+<span class="nx">freddie</span><span class="p">.</span><span class="nx">colorChange</span><span class="p">(</span><span class="dl">'</span><span class="s1">orange</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-7">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">TypeError</span>
+</code></pre></div></div>
+
+<h3 id="解析-7">解析</h3>
+
+<ul>
+  <li>static关键字表明该方法是一个静态方法，静态方法不会被实例继承，而只可以通过类调用，如果在实例上调用就会报TypeError错误，并且类上调用时this指向该类。</li>
+</ul>
+
+<hr />
+
+<h2 id="9-输出什么">9. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">greeting</span>
+<span class="nx">ggg</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">ggg</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-8">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{}</span>
+</code></pre></div></div>
+
+<h3 id="解析-8">解析</h3>
+
+<ul>
+  <li>当不使用声明关键字，为一个未声明的变量赋值的时候，默认声明了一个全局变量并赋值、所以上式相当于global.ggg={}</li>
+</ul>
+
+<hr />
+
+<h2 id="10-当我们这么做时会发生什么">10. 当我们这么做时会发生什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">bark</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Woof!</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">bark</span><span class="p">.</span><span class="nx">animal</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">dog</span><span class="dl">'</span>
+</code></pre></div></div>
+
+<h3 id="答案-9">答案</h3>
+
+<p>正常运行</p>
+
+<h3 id="解析-9">解析</h3>
+
+<ul>
+  <li>函数是一个对象，这么做相当于给一个对象增加属性，是完全可以的。</li>
+</ul>
+
+<hr />
+
+<h2 id="11-输出什么">11. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">=</span> <span class="nx">firstName</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">lastName</span> <span class="o">=</span> <span class="nx">lastName</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">member</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="dl">"</span><span class="s2">Lydia</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Hallie</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">Person</span><span class="p">.</span><span class="nx">getFullName</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="p">}</span><span class="s2"> </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">}</span><span class="s2">`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">member</span><span class="p">.</span><span class="nx">getFullName</span><span class="p">());</span>
+</code></pre></div></div>
+
+<h3 id="答案-10">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">TypeError</span>
+</code></pre></div></div>
+
+<h3 id="解析-10">解析</h3>
+
+<ul>
+  <li>上式中添加的方法挂在了构造函数对象上而不是挂在原型上被实例继承，实例并不能继承构造函数身上挂的对象，所以member实例上没有该方法。</li>
+</ul>
+
+<hr />
+
+<h2 id="12-输出什么">12. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">=</span> <span class="nx">firstName</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">lastName</span> <span class="o">=</span> <span class="nx">lastName</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">lydia</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="dl">'</span><span class="s1">Lydia</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Hallie</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">sarah</span> <span class="o">=</span> <span class="nx">Person</span><span class="p">(</span><span class="dl">'</span><span class="s1">Sarah</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">Smith</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">lydia</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">sarah</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-11">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Person</span><span class="err"> </span><span class="p">{</span><span class="nl">firstName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lydia</span><span class="dl">"</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Hallie</span><span class="dl">"</span><span class="p">}</span>
+<span class="kc">undefined</span>
+</code></pre></div></div>
+
+<h3 id="解析-11">解析</h3>
+
+<ul>
+  <li>使用new关键字会创建一个新的空对象，然后this指向这个空对象并且执行构造函数</li>
+  <li>不使用new关键字时相当于在全局环境里执行这个函数，this指向全局环境，相当于在全局环境里增加了两个变量，分别是firstName和lastName，而sarah本身声明后被赋值了没有返回值的Person函数的返回值，即undefined</li>
+</ul>
+
+<hr />
+
+<h2 id="13-事件传播的三个阶段是什么">13. 事件传播的三个阶段是什么？</h2>
+
+<h3 id="答案-12">答案</h3>
+
+<p>捕获阶段-目标阶段-冒泡阶段</p>
+
+<hr />
+
+<h2 id="14-所有的对象都有原型吗">14. 所有的对象都有原型吗？</h2>
+
+<h3 id="答案-13">答案</h3>
+
+<p>否</p>
+
+<h3 id="解析-12">解析</h3>
+
+<ul>
+  <li>除了基本对象（最终的原型对象），所有对象都有原型</li>
+</ul>
+
+<hr />
+
+<h2 id="15-输出什么">15. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span>
+<span class="p">}</span>
+
+<span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="dl">'</span><span class="s1">2</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-14">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">12</span><span class="dl">"</span>
+</code></pre></div></div>
+
+<h3 id="解析-13">解析</h3>
+
+<ul>
+  <li>1和’2’分别是数字类型和字符串类型，类型不相同进行和运算时会发生类型转换，这里将数字类型转换为字符串类型然后拼接。</li>
+</ul>
+
+<hr />
+
+<h2 id="16-输出什么">16. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">number</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">number</span><span class="o">++</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="o">++</span><span class="nx">number</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">number</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-15">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span> <span class="mi">2</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<h3 id="解析-14">解析</h3>
+
+<ul>
+  <li>number++:先得到number的值，然后进行number = number+1</li>
+  <li>++number:先number = number+1，然后取number的值</li>
+</ul>
+
+<hr />
+
+<h2 id="17-输出什么">17. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getPersonInfo</span><span class="p">(</span><span class="nx">one</span><span class="p">,</span> <span class="nx">two</span><span class="p">,</span> <span class="nx">three</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">one</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">two</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">three</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Lydia</span><span class="dl">'</span>
+<span class="kd">const</span> <span class="nx">age</span> <span class="o">=</span> <span class="mi">21</span>
+
+<span class="nx">getPersonInfo</span><span class="s2">`</span><span class="p">${</span><span class="nx">person</span><span class="p">}</span><span class="s2"> is </span><span class="p">${</span><span class="nx">age</span><span class="p">}</span><span class="s2"> years old`</span>
+</code></pre></div></div>
+
+<h3 id="答案-16">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="dl">""</span><span class="p">,</span> <span class="dl">"</span><span class="s2"> is </span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2"> years old</span><span class="dl">"</span><span class="p">]</span>
+<span class="dl">'</span><span class="s1">Lydia</span><span class="dl">'</span>
+<span class="mi">21</span>
+</code></pre></div></div>
+
+<h3 id="解析-15">解析</h3>
+
+<ul>
+  <li>使用模板字面量，第一个参数获取到的是由模板字面量中变量分割开来的几个字符串组成的数组，其他参数依次是模板中的变量的值。</li>
+</ul>
+
+<hr />
+
+<h2 id="18-输出什么">18. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">checkAge</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">data</span> <span class="o">===</span> <span class="p">{</span> <span class="na">age</span><span class="p">:</span> <span class="mi">18</span> <span class="p">})</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">You are an adult!</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">data</span> <span class="o">==</span> <span class="p">{</span> <span class="na">age</span><span class="p">:</span> <span class="mi">18</span> <span class="p">})</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">You are still an adult.</span><span class="dl">'</span><span class="p">)</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Hmm.. You don't have an age I guess`</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">checkAge</span><span class="p">({</span> <span class="na">age</span><span class="p">:</span> <span class="mi">18</span> <span class="p">})</span>
+</code></pre></div></div>
+
+<h3 id="答案-17">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">Hmm</span><span class="p">..</span> <span class="nx">You</span> <span class="nx">don</span><span class="dl">'</span><span class="s1">t have an age I guess
+</span></code></pre></div></div>
+
+<h3 id="解析-16">解析</h3>
+
+<ul>
+  <li>比较两个对象是否相等时会比较两个引用是否指向同一块内存地址，这里传递参数进去的对象地址和被比较的参照对象不在同一个内存地址里，也就是说是两个对象，所以判定为不等。</li>
+</ul>
+
+<hr />
+
+<h2 id="19-输出什么">19. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getAge</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">args</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">getAge</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-18">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="dl">"</span><span class="s2">object</span><span class="dl">"</span>
+</code></pre></div></div>
+
+<h3 id="解析-17">解析</h3>
+
+<ul>
+  <li>传递进去的参数被一个类数组所承接，本质上是一个对象</li>
+</ul>
+
+<hr />
+
+<h2 id="20-输出什么">20. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getAge</span><span class="p">()</span> <span class="p">{</span>
+  <span class="dl">'</span><span class="s1">use strict</span><span class="dl">'</span>
+  <span class="nx">age</span> <span class="o">=</span> <span class="mi">21</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">age</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">getAge</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="答案-19">答案</h3>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ReferenceError</span>
+</code></pre></div></div>
+
+<h3 id="解析-18">解析</h3>
+
+<ul>
+  <li>严格模式下禁止对一个未声明的变量进行赋值，所以这里会抛出引用错误。</li>
+</ul>
+
+<hr />
+
+<h2 id="21-输出什么">21. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">sum</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="dl">'</span><span class="s1">10*10+5</span><span class="dl">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-20">答案</h3>
+
+<p>105</p>
+
+<h3 id="解析-19">解析</h3>
+
+<ul>
+  <li>eval会将传进去的字符串当做js代码来解析执行</li>
+</ul>
+
+<hr />
+
+<h2 id="22-cool_secret可访问多长时间">22. cool_secret可访问多长时间？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">sessionStorage</span><span class="p">.</span><span class="nx">setItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">cool_secret</span><span class="dl">'</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-21">答案</h3>
+
+<ul>
+  <li>可以活到用户关掉标签页时候</li>
+</ul>
+
+<h3 id="解析-20">解析</h3>
+
+<ul>
+  <li>关掉teb标签页时候sessionStorage存储的数据才会被删除</li>
+</ul>
+
+<hr />
+
+<h2 id="23-输出什么">23. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="kd">var</span> <span class="nx">num</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-22">答案</h3>
+
+<p>10</p>
+
+<h3 id="解析-21">解析</h3>
+
+<ul>
+  <li>使用var重复声明变量时变量将保存最新的那个值，而let/const不行，重复声明会抛错</li>
+</ul>
+
+<hr />
+
+<h2 id="24-输出什么">24. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">:</span> <span class="dl">'</span><span class="s1">a</span><span class="dl">'</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span> <span class="p">}</span>
+<span class="kd">const</span> <span class="kd">set</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+
+<span class="nx">obj</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">)</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="kd">set</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="dl">'</span><span class="s1">1</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">set</span><span class="p">.</span><span class="nx">has</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-23">答案</h3>
+
+<p>true true false true</p>
+
+<h3 id="解析-22">解析</h3>
+
+<ul>
+  <li>所有对象的键（不包括Symbol）在底层都是字符串，对于集合set则不然</li>
+</ul>
+
+<hr />
+
+<h2 id="25-输出什么">25. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="dl">'</span><span class="s1">one</span><span class="dl">'</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="dl">'</span><span class="s1">two</span><span class="dl">'</span><span class="p">,</span> <span class="na">a</span><span class="p">:</span> <span class="dl">'</span><span class="s1">three</span><span class="dl">'</span> <span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-24">答案</h3>
+
+<p>{ a: ‘three’, b: ‘two’ }</p>
+
+<h3 id="解析-23">解析</h3>
+
+<ul>
+  <li>重复声明一个对象的键键的位置保持第一次出现的顺序，值保持最后一次的赋值。</li>
+</ul>
+
+<hr />
+
+<h2 id="26-javascript全局执行上下文为你做了两件事">26. Javascript全局执行上下文为你做了两件事</h2>
+
+<h3 id="答案-25">答案</h3>
+
+<ul>
+  <li>全局对象和this关键字</li>
+</ul>
+
+<hr />
+
+<h2 id="27-输出什么">27. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">===</span> <span class="mi">3</span><span class="p">)</span> <span class="k">continue</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="答案-26">答案</h3>
+
+<p>1 2 4</p>
+
+<h3 id="解析-24">解析</h3>
+
+<ul>
+  <li>continue会中断本次循环体，立即执行下一轮循环</li>
+</ul>
+
+<hr />
+
+<h2 id="28-输出什么">28. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">giveLydiaPizza</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="dl">'</span><span class="s1">Just give Lydia pizza already!</span><span class="dl">'</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Lydia</span><span class="dl">'</span>
+
+<span class="nx">name</span><span class="p">.</span><span class="nx">giveLydiaPizza</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="答案-27">答案</h3>
+
+<p>‘Just give Lydia pizza already!</p>
+
+<h3 id="解析-25">解析</h3>
+
+<ul>
+  <li>该方法被绑到了字符串这一类的原型上，被所有实例所共享</li>
+</ul>
+
+<hr />
+
+<h2 id="29-输出什么">29. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">b</span><span class="dl">'</span> <span class="p">}</span>
+<span class="kd">const</span> <span class="nx">c</span> <span class="o">=</span> <span class="p">{</span> <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">c</span><span class="dl">'</span> <span class="p">}</span>
+
+<span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="nx">a</span><span class="p">[</span><span class="nx">c</span><span class="p">]</span> <span class="o">=</span> <span class="mi">456</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">[</span><span class="nx">b</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h3 id="答案-28">答案</h3>
+
+<p>456</p>
+
+<h3 id="解析-26">解析</h3>
+
+<ul>
+  <li>对象的键只有字符串类型，所以如果有其他的类型的值充当键使用时会被转化为字符串类型，这里的b，c都被转化为“[object object]”，是同一个，重复赋值会更新值。</li>
+</ul>
+
+<hr />
+
+<h2 id="30-输出什么">30. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">foo</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">First</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">const</span> <span class="nx">bar</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setTimeout</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Second</span><span class="dl">'</span><span class="p">))</span>
+<span class="kd">const</span> <span class="nx">baz</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">Third</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="nx">bar</span><span class="p">()</span>
+<span class="nx">foo</span><span class="p">()</span>
+<span class="nx">baz</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="答案-29">答案</h3>
+
+<p>First Third Second</p>
+
+<h3 id="解析-27">解析</h3>
+
+<ul>
+  <li>回调函数被放到事件队列，执行栈中推入了foo，baz，执行完执行栈中的程序后才会调用事件队列中的程序。</li>
+</ul>
+
+<hr />
+
+<h2 id="31-当点击按钮时eventtarget是什么">31. 当点击按钮时，event.target是什么？</h2>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">onclick=</span><span class="s">"console.log('first div')"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">onclick=</span><span class="s">"console.log('second div')"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">onclick=</span><span class="s">"console.log('button')"</span><span class="nt">&gt;</span>
+      Click!
+    <span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="答案-30">答案</h3>
+
+<p>button</p>
+
+<h3 id="解析-28">解析</h3>
+
+<ul>
+  <li>事件最深处即是目标阶段，是真正的target</li>
+</ul>
+
+<hr />
+
+<h2 id="32-点击该段落时日志输出的是什么">32. 点击该段落时，日志输出的是什么？</h2>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">onclick=</span><span class="s">"console.log('div')"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">onclick=</span><span class="s">"console.log('p')"</span><span class="nt">&gt;</span>
+    Click here!
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="答案-31">答案</h3>
+
+<p>p div</p>
+
+<h3 id="解析-29">解析</h3>
+
+<ul>
+  <li>默认情况下事件处理程序在冒泡阶段执行，从里到外。</li>
+</ul>
+
+<hr />
+
+<h2 id="33-输出什么">33. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">'</span><span class="s1">Lydia</span><span class="dl">'</span> <span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">sayHi</span><span class="p">(</span><span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`</span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2"> is </span><span class="p">${</span><span class="nx">age</span><span class="p">}</span><span class="s2">`</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="nx">sayHi</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<span class="nx">sayHi</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-32">答案</h3>
+
+<p>Lydia is 21 function</p>
+
+<h3 id="解析-30">解析</h3>
+
+<ul>
+  <li>call：绑定this为第一个参数并且执行</li>
+  <li>bind：只绑定this但是不执行，返回一个函数的副本</li>
+</ul>
+
+<hr />
+
+<h2 id="34-输出什么">34. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">sayHi</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(()</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">)()</span>
+<span class="p">}</span>
+
+<span class="k">typeof</span> <span class="nx">sayHi</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="答案-33">答案</h3>
+
+<p>number</p>
+
+<h3 id="解析-31">解析</h3>
+
+<ul>
+  <li>立即执行函数会当时立即执行，返回了0 是个number</li>
+</ul>
+
+<hr />
+
+<h2 id="35-下面哪些值是false">35. 下面哪些值是false？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">0</span>
+<span class="k">new</span> <span class="nb">Number</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="p">(</span><span class="dl">''</span><span class="p">)</span>
+<span class="p">(</span><span class="dl">'</span><span class="s1"> </span><span class="dl">'</span><span class="p">)</span>
+<span class="k">new</span> <span class="nb">Boolean</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<span class="kc">undefined</span>
+</code></pre></div></div>
+
+<h3 id="答案-34">答案</h3>
+
+<p>0, ‘’, undefined</p>
+
+<h3 id="解析-32">解析</h3>
+
+<ul>
+  <li>0 undefined null 空字符串 false NaN是false</li>
+</ul>
+
+<hr />
+
+<h2 id="36-输出什么">36. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="k">typeof</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-35">答案</h3>
+
+<p>string</p>
+
+<h3 id="解析-33">解析</h3>
+
+<ul>
+  <li>typeof 1返回“number”，是个字符串</li>
+</ul>
+
+<hr />
+
+<h2 id="37-输出什么">37. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="nx">numbers</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">numbers</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-36">答案</h3>
+
+<p>[1, 2, 3, empty × 7, 11]</p>
+
+<h3 id="解析-34">解析</h3>
+
+<ul>
+  <li>未赋值的变成empty</li>
+</ul>
+
+<hr />
+
+<h2 id="38-输出什么">38. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">x</span><span class="p">,</span> <span class="nx">y</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">()</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">(</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+  <span class="p">}</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">)</span>
+<span class="p">})()</span>
+</code></pre></div></div>
+
+<h3 id="答案-37">答案</h3>
+
+<p>1 undefined 2</p>
+
+<h3 id="解析-35">解析</h3>
+
+<ul>
+  <li>catch创造了块级作用域并捕捉了x，其内部给x，y赋值后外面的x并未得到值，而y相当于未声明直接赋值，也就是给全局变量赋值，得到2</li>
+</ul>
+
+<hr />
+
+<h2 id="39-js中的一切都是">39. js中的一切都是？</h2>
+
+<h3 id="答案-38">答案</h3>
+
+<p>基本类型和对象</p>
+
+<hr />
+
+<h2 id="40-输出什么">40. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]].</span><span class="nx">reduce</span><span class="p">(</span>
+  <span class="p">(</span><span class="nx">acc</span><span class="p">,</span> <span class="nx">cur</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">acc</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">cur</span><span class="p">)</span>
+  <span class="p">},</span>
+  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="答案-39">答案</h3>
+
+<p>[1,2,0,1,2,3]</p>
+
+<h3 id="解析-36">解析</h3>
+
+<ul>
+  <li>reduce是收敛函数，第一个参数是收敛用的函数，第二个参数被当做首次调用函数时候的acc值，acc表示前一个，cur表示数组后一个，返回的值被当做acc继续循环操作数组元素。</li>
+</ul>
+
+<hr />
+
+<h2 id="41-输出什么">41. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">!!</span><span class="kc">null</span>
+<span class="o">!!</span><span class="dl">''</span>
+<span class="o">!!</span><span class="mi">1</span>
+</code></pre></div></div>
+
+<h3 id="答案-40">答案</h3>
+
+<p>false false true</p>
+
+<h3 id="解析-37">解析</h3>
+
+<ul>
+  <li>null为false，两次取反为false；’‘为false，同理；1为true，两次取反还为true</li>
+</ul>
+
+<hr />
+
+<h2 id="42-setinterval-方法的返回值是什么">42. setInterval 方法的返回值是什么？</h2>
+
+<h3 id="答案-41">答案</h3>
+
+<ul>
+  <li>返回一个唯一的编号（id）表示这个定时器，取消定时器时可以使用。</li>
+</ul>
+
+<hr />
+
+<h2 id="43-输出什么">43. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[...</span><span class="dl">'</span><span class="s1">Lydia</span><span class="dl">'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="答案-42">答案</h3>
+
+<p>[“L”, “y”, “d”, “i”, “a”]</p>
+
+<h3 id="解析-38">解析</h3>
+
+<ul>
+  <li>扩展运算符的使用</li>
+</ul>
+
+<hr />
+
+<h2 id="44-输出什么">44. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span><span class="o">*</span> <span class="nx">generator</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">yield</span> <span class="nx">i</span><span class="p">;</span>
+  <span class="k">yield</span> <span class="nx">i</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">gen</span> <span class="o">=</span> <span class="nx">generator</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gen</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gen</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">value</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="答案-43">答案</h3>
+
+<p>10 20</p>
+
+<h3 id="解析-39">解析</h3>
+
+<ul>
+  <li>生成器函数每次next会执行一个yield语句。</li>
+</ul>
+
+<hr />
+
+<h2 id="45-返回值是什么">45. 返回值是什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">firstPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">res</span><span class="p">,</span> <span class="nx">rej</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">res</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="dl">"</span><span class="s2">one</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="kd">const</span> <span class="nx">secondPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">((</span><span class="nx">res</span><span class="p">,</span> <span class="nx">rej</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">res</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="dl">"</span><span class="s2">two</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nb">Promise</span><span class="p">.</span><span class="nx">race</span><span class="p">([</span><span class="nx">firstPromise</span><span class="p">,</span> <span class="nx">secondPromise</span><span class="p">]).</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">));</span>
+</code></pre></div></div>
+
+<h3 id="答案-44">答案</h3>
+
+<p>two</p>
+
+<h3 id="解析-40">解析</h3>
+
+<ul>
+  <li>race方法会完成第一个首先完成的promise即终止，这里secondPromise首先完成，所以只打印处two</li>
+</ul>
+
+<hr />
+
+<h2 id="46-输出什么">46. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lydia</span><span class="dl">"</span> <span class="p">};</span>
+<span class="kd">const</span> <span class="nx">members</span> <span class="o">=</span> <span class="p">[</span><span class="nx">person</span><span class="p">];</span>
+<span class="nx">person</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">members</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="答案-45">答案</h3>
+
+<p>[{ name: “Lydia” }]</p>
+
+<h3 id="解析-41">解析</h3>
+
+<ul>
+  <li>person指针指向对象{ name: “Lydia” }</li>
+  <li>然后members[0]作为一个指针也指向此对象
+person赋值为null的时候即断开了person指针与原对象之间的关联，但不影响数组。</li>
+</ul>
+
+<hr />
+
+<h2 id="47-输出什么">47. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lydia</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">age</span><span class="p">:</span> <span class="mi">21</span>
+<span class="p">};</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kd">const</span> <span class="nx">item</span> <span class="k">in</span> <span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="答案-46">答案</h3>
+
+<p>“name”, “age”</p>
+
+<h3 id="解析-42">解析</h3>
+
+<ul>
+  <li>for…in循环迭代的是对象的键值</li>
+</ul>
+
+<hr />
+
+<h2 id="48-输出什么">48. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">5</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="答案-47">答案</h3>
+
+<p>“75”</p>
+
+<h3 id="解析-43">解析</h3>
+
+<ul>
+  <li>从左到右运算，3+4得7，数字与字符串相加会都转为字符串进行字符串拼接，得到“75”</li>
+</ul>
+
+<h2 id="49-num的值是什么">49. num的值是什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">num</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="dl">"</span><span class="s2">7*6</span><span class="dl">"</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="答案-48">答案</h3>
+
+<p>7</p>
+
+<h3 id="解析-44">解析</h3>
+
+<ul>
+  <li>第一个参数是要解析为数字的内容，当遇到不合法字符时停止解析；第二个参数是指按多少进制来解析，这里是10进制</li>
+</ul>
+
+<hr />
+
+<h2 id="50-输出什么">50. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nx">num</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">num</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">number</span><span class="dl">"</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">num</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="答案-49">答案</h3>
+
+<p>[undefined, undefined, undefined]</p>
+
+<h3 id="解析-45">解析</h3>
+
+<ul>
+  <li>map函数创建新数组并将函数的返回值插入数组。当函数没有返回值时默认返回undefined</li>
+</ul>
+
+<hr />
+
+<h2 id="51-输出什么">51. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getInfo</span><span class="p">(</span><span class="nx">member</span><span class="p">,</span> <span class="nx">year</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">member</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Lydia</span><span class="dl">"</span><span class="p">;</span>
+  <span class="nx">year</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">1998</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Sarah</span><span class="dl">"</span> <span class="p">};</span>
+<span class="kd">const</span> <span class="nx">birthYear</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">1997</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">getInfo</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="nx">birthYear</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="nx">birthYear</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="答案-50">答案</h3>
+
+<p>{ name: “Lydia” }, “1997”</p>
+
+<h3 id="解析-46">解析</h3>
+
+<ul>
+  <li>普通参数是值传递，对象是引用传递，birthYear只是在getInfo函数内部值复制了一份，然后在函数作用域里被改为1998，外部的值独立于它，仍是1997，而person则是此指针指向的对象内部值被改变，所以在外部也被改变了。</li>
+</ul>
+
+<h2 id="52-输出什么">52. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">greeting</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="dl">"</span><span class="s2">Hello world!</span><span class="dl">"</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">sayHi</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">greeting</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">It worked!</span><span class="dl">"</span><span class="p">,</span> <span class="nx">data</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Oh no an error!</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">sayHi</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="答案-51">答案</h3>
+
+<p>Oh no an error！Hello world!</p>
+
+<h3 id="解析-47">解析</h3>
+
+<ul>
+  <li>throw语句抛出自定义错误，try语句执行到抛错的地方会终止，跳到catch中，错误被捕捉处理。</li>
+</ul>
+
+<hr />
+
+<h2 id="53-输出什么">53. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Car</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">make</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Lamborghini</span><span class="dl">"</span><span class="p">;</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="na">make</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Maserati</span><span class="dl">"</span> <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">const</span> <span class="nx">myCar</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCar</span><span class="p">.</span><span class="nx">make</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="答案-52">答案</h3>
+
+<p>“Maserati”</p>
+
+<h3 id="解析-48">解析</h3>
+
+<ul>
+  <li>使用构造函数和new关键字创建对象时，如果返回值没有或者不是对象则返回是一个绑定了构造函数内this的一个对象，如果有返回对象则是此对象。</li>
+</ul>
+
+<hr />
+
+<h2 id="54-输出什么">54. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="p">(</span><span class="nx">y</span> <span class="o">=</span> <span class="mi">10</span><span class="p">);</span>
+<span class="p">})();</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">x</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">y</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="答案-53">答案</h3>
+
+<p>undefined</p>
+
+<h3 id="解析-49">解析</h3>
+
+<ul>
+  <li>上面的运算式可以分解为 y=10;let x = y; x定义于立即执行函数的块级作用域里，而y未声明直接赋值默认定义为一个全局变量，所以在全局变量可以取到y，但是并不能取到x</li>
+</ul>
+
+<hr />
+
+<h2 id="55-输出什么">55. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Dog</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">Dog</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">bark</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">`Woof I am </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="kd">const</span> <span class="nx">pet</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Dog</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mara</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="nx">pet</span><span class="p">.</span><span class="nx">bark</span><span class="p">();</span>
+
+<span class="k">delete</span> <span class="nx">Dog</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">bark</span><span class="p">;</span>
+
+<span class="nx">pet</span><span class="p">.</span><span class="nx">bark</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="答案-54">答案</h3>
+
+<p>“Woof I am Mara”, TypeError</p>
+
+<h3 id="解析-50">解析</h3>
+
+<ul>
+  <li>头一次调用会根据原型链找到该函数并执行，第二次调用前删除了原型上的该方法，直接执行时抛错</li>
+</ul>
+
+<hr />
+
+<h2 id="56-输出什么">56. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="kd">set</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kd">set</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="答案-55">答案</h3>
+
+<p>Set(4) {1, 2, 3, 4}</p>
+
+<h3 id="解析-51">解析</h3>
+
+<ul>
+  <li>Set类型是一个类数组对象，其中不会有重复值</li>
+</ul>
+
+<hr />
+
+<h2 id="57-输出什么">57. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// counter.js</span>
+<span class="kd">let</span> <span class="nx">counter</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">counter</span><span class="p">;</span>
+<span class="c1">// index.js</span>
+<span class="k">import</span> <span class="nx">myCounter</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./counter</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">myCounter</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">myCounter</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="答案-56">答案</h3>
+
+<p>Error</p>
+
+<h3 id="解析-52">解析</h3>
+
+<ul>
+  <li>ES6语法的模块化都是只读引入，只有导出模块本身才能修改它的值</li>
+</ul>
+
+<hr />
+
+<h2 id="58-输出什么">58. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Lydia</span><span class="dl">"</span><span class="p">;</span>
+<span class="nx">age</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">delete</span> <span class="nx">name</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">delete</span> <span class="nx">age</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="答案-57">答案</h3>
+
+<p>false true</p>
+
+<h3 id="解析-53">解析</h3>
+
+<ul>
+  <li>delete返回一个表示删除成功与否的布尔值，而通过var，const，let关键字声明的变量无法用delete删除，delete可以删除对象属性，这里的age未声明直接赋值相当于声明全局变量的一个属性并赋值，是可以删除的。</li>
+</ul>
+
+<hr />
+
+<h2 id="59-输出什么">59. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+<span class="kd">const</span> <span class="p">[</span><span class="nx">y</span><span class="p">]</span> <span class="o">=</span> <span class="nx">numbers</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">y</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="答案-58">答案</h3>
+
+<p>1</p>
+
+<h3 id="解析-54">解析</h3>
+
+<ul>
+  <li>解构赋值时候按顺序一个变量对应一个元素</li>
+</ul>
+
+<hr />
+
+<h2 id="60-输出什么">60. 输出什么？</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Lydia</span><span class="dl">"</span><span class="p">,</span> <span class="na">age</span><span class="p">:</span> <span class="mi">21</span> <span class="p">};</span>
+<span class="kd">const</span> <span class="nx">admin</span> <span class="o">=</span> <span class="p">{</span> <span class="na">admin</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="p">...</span><span class="nx">user</span> <span class="p">};</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">admin</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="答案-59">答案</h3>
+
+<p>{ admin: true, name: “Lydia”, age: 21 }</p>
+
+<h3 id="解析-55">解析</h3>
+
+<ul>
+  <li>扩展运算符的用法。</li>
+</ul>
+:ET

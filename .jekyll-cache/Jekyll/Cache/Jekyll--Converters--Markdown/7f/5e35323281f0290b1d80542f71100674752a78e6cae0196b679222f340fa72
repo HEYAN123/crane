@@ -1,0 +1,51 @@
+I"�
+
+<ul>
+  <li>
+    <p>装饰器，decorator，是一种与class相关的函数的写法，用来注释或修改类和类方法。</p>
+  </li>
+  <li>
+    <p>作用：</p>
+  </li>
+</ul>
+
+<ol>
+  <li>增加代码可读性，表达代码意图</li>
+  <li>方便修改或增加类功能</li>
+</ol>
+
+<ul>
+  <li>装饰器装饰类，为类添加静态属性或实例属性</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">decorator</span><span class="p">(</span><span class="nx">prop1</span><span class="p">,</span> <span class="nx">prop2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">target</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">target</span><span class="p">.</span><span class="nx">active</span> <span class="o">=</span> <span class="nx">prop1</span><span class="p">;</span> <span class="c1">// 静态属性</span>
+        <span class="nx">target</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">show</span> <span class="o">=</span> <span class="nx">prop2</span><span class="p">;</span> <span class="c1">// 实例属性</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="p">@</span><span class="nd">decorator</span><span class="p">(</span><span class="kc">true</span><span class="p">,</span> <span class="kc">false</span><span class="p">)</span>
+<span class="kd">class</span> <span class="nx">a</span> <span class="p">{</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>装饰器装饰类的属性：修改属性的属性描述符对象</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// decorator函数</span>
+<span class="kd">function</span> <span class="nx">decorate</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">descriptor</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="k">return</span> <span class="nx">descriptor</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">a</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="p">@</span><span class="nd">decorate</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+:ET

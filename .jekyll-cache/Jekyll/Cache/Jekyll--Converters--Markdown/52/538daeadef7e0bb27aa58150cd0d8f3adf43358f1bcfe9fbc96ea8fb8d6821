@@ -1,0 +1,42 @@
+I"H<ul id="markdown-toc">
+  <li><a href="#用途" id="markdown-toc-用途">用途</a></li>
+</ul>
+
+<p>js中的七种数据类型：</p>
+
+<ul>
+  <li>boolean</li>
+  <li>null</li>
+  <li>undefined</li>
+  <li>number</li>
+  <li>string</li>
+  <li>object</li>
+  <li>symbol</li>
+</ul>
+
+<p>symbol是七种数据类型之一，六种基础类型之一，表示独一无二的值，用来避免属性命名冲突</p>
+
+<ul>
+  <li>生成：调用Symbol方法，传入一个字符串作为参数（其他类型也会转换为字符串），表示对当前Symbol值的描述，使用x.description</li>
+</ul>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nb">Symbol</span><span class="p">(</span><span class="dl">'</span><span class="s1">str</span><span class="dl">'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>相同参数调用Symbol方法生成的值是不相等的</li>
+  <li>Symbol值不能与其他类型的值进行运算，却可以显式转换为字符串或布尔值</li>
+</ul>
+
+<h2 id="用途">用途</h2>
+
+<ol>
+  <li>作为对象的属性名，保证属性独一无二，防止属性被改写或覆盖</li>
+  <li>用于定义一组常量，保证这组常量的值是不相等的</li>
+  <li>由于symbol属性不会被常规方法遍历到，可以用于为对象定义非私有却又只用于内部的方法</li>
+</ol>
+
+<ul>
+  <li>寻找某一symbol值：Symbol.for(‘str’)——会返回已存在的symbol值或者创建，并登记</li>
+</ul>
+:ET
