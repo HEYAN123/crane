@@ -9,6 +9,7 @@
 .post-title {
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
 }
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 article,
