@@ -3629,10 +3629,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
   margin-bottom: 0;
 }
 .navbar-brand {
-  float: left;
+  display: block;
   padding: 20px 15px;
-  font-size: 18px;
-  line-height: 20px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus {
@@ -6478,7 +6476,7 @@ hr {
   font-weight: bold;
   color: #375842;
   background-color: transparent;
-  border-right: 1px solid #375842;
+  border-right: 3px solid rgba(55, 88, 66, .5);
 }
 .sidebar .nav .nav {
   display: none;
@@ -6533,7 +6531,7 @@ hr {
 }
 .docs-nav .container .navbar-brand {
   margin: 12px 0 0;
-  width: 100px;
+  width: 36px;
   padding: 0;
 }
 .docs-nav .container .navbar-brand img {
