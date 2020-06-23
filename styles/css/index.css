@@ -378,27 +378,33 @@ h6 .small {
 }
 h1,
 .h1 {
-  font-size: 38px;
+  font-size: 30px;
+  line-height: 38px;
 }
 h2,
 .h2 {
-  font-size: 31px;
+  font-size: 24px;
+  line-height: 32px;
 }
 h3,
 .h3 {
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 28px;
 }
 h4,
 .h4 {
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 24px;
 }
 h5,
 .h5 {
   font-size: 14px;
+  line-height: 22px;
 }
 h6,
 .h6 {
   font-size: 12px;
+  line-height: 20px;
 }
 .page-header {
   padding-bottom: 9px;
@@ -2033,7 +2039,7 @@ fieldset[disabled] .btn-info.active {
   border-color: #46b8da;
 }
 .btn-link {
-  color: #43759e;
+  color: #E08B70;
   font-weight: normal;
   cursor: pointer;
   border-radius: 0;
@@ -3284,7 +3290,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav .open > a:hover,
 .nav .open > a:focus {
   background-color: #eeeeee;
-  border-color: #43759e;
+  border-color: #E08B70;
 }
 .nav .open > a .caret,
 .nav .open > a:hover .caret,
@@ -3443,8 +3449,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
   display: block;
 }
 .nav .caret {
-  border-top-color: #43759e;
-  border-bottom-color: #43759e;
+  border-top-color: #E08B70;
+  border-bottom-color: #E08B70;
 }
 .nav a:hover .caret {
   border-top-color: #2c4d68;
@@ -4237,7 +4243,7 @@ a.badge:focus {
 }
 a.list-group-item.active > .badge,
 .nav-pills > .active > a > .badge {
-  color: #43759e;
+  color: #E08B70;
   background-color: #ffffff;
 }
 .nav-pills > li > a > .badge {
@@ -4297,7 +4303,7 @@ a.list-group-item.active > .badge,
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #43759e;
+  border-color: #E08B70;
 }
 .thumbnail > img {
   margin-left: auto;
@@ -6101,8 +6107,8 @@ html {
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, 'Microsoft YaHei', sans-serif;
   font-size: 14px;
-  line-height: 1.42857143;
-  color: #333333;
+  line-height: 2;
+  color: rgba(0, 0, 0, 0.85);
   background-color: #f7f7f7;
 }
 input,
@@ -6114,12 +6120,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #43759e;
+  color: #E08B70;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #2c4d68;
+  color: #b07b58;
   text-decoration: underline;
 }
 a:focus {
@@ -6355,10 +6361,10 @@ hr {
   padding-top: 40px;
   padding-bottom: 30px;
   margin-top: 100px;
-  color: #777;
-  background: #fff;
+  color: #375842;
+  background: #ebcdc3;
   text-align: center;
-  border-top: 1px solid #eeeeee;
+  box-shadow: 0.8rem 0 0 0 rgba(0, 0, 0, 0.175);
 }
 .footer-links {
   margin: 10px 0;
@@ -6372,9 +6378,6 @@ hr {
   padding-left: 0;
 }
 @media (min-width: 768px) {
-  .footer {
-    text-align: left;
-  }
   .footer p {
     margin-bottom: 0;
   }
@@ -6448,8 +6451,8 @@ hr {
 /* All levels of nav */
 .sidebar .nav > li > a {
   display: block;
-  color: #36556e;
-  padding: 5px 20px;
+  color: #375842;
+  padding: 5px 0;
 }
 .sidebar .nav > li > a:hover,
 .sidebar .nav > li > a:focus {
@@ -6461,16 +6464,17 @@ hr {
 .sidebar .nav > .active:hover > a,
 .sidebar .nav > .active:focus > a {
   font-weight: bold;
-  color: #1d365d;
+  color: #375842;
   background-color: transparent;
-  border-right: 1px solid #1d365d;
+  border-right: 1px solid #375842;
 }
 .sidebar .nav .nav {
   display: none;
   margin-bottom: 8px;
+  margin-left: 14px;
 }
 .sidebar .nav .nav > li > a {
-  padding: 3px 30px;
+  padding: 3px 0;
   font-size: 90%;
 }
 .sidebar .glyphicon {
@@ -6541,14 +6545,14 @@ hr {
   background-color: rgba(0, 0, 0, 0.2);
 }
 .docs-nav .navbar-toggle {
-  border-color: #1d365d;
+  border-color: #375842;
 }
 .docs-nav .navbar-toggle:hover {
   background-color: #111f36;
   border-color: #111f36;
 }
 .btn-outline {
-  color: #1d365d;
+  color: #375842;
   background-color: #fff;
   border-color: #e5e5e5;
 }
@@ -6556,8 +6560,8 @@ hr {
 .btn-outline:focus,
 .btn-outline:active {
   color: #fff;
-  background-color: #1d365d;
-  border-color: #1d365d;
+  background-color: #375842;
+  border-color: #375842;
 }
 /* Inverted outline button (white on dark) */
 .btn-outline-inverse {
@@ -6568,7 +6572,7 @@ hr {
 .btn-outline-inverse:hover,
 .btn-outline-inverse:focus,
 .btn-outline-inverse:active {
-  color: #1d365d;
+  color: #375842;
   text-shadow: none;
   background-color: #fff;
   border-color: #fff;
@@ -6631,7 +6635,7 @@ h3 .anchor:hover {
 }
 .section-content .source-link.active,
 .section-content .source-link:hover {
-  color: #43759e;
+  color: #E08B70;
   text-decoration: none;
 }
 .section-content .source-link.right {
@@ -6653,7 +6657,7 @@ h3 .anchor:hover {
 .popover-source .glyphicon-new-window,
 .popover-source:hover,
 .popover-source .glyphicon-new-window:hover {
-  color: #43759e;
+  color: #E08B70;
 }
 .popover-source.left {
   margin-top: 2px;
