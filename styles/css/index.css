@@ -3709,7 +3709,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
   .navbar-nav > li > a,
   .docs-nav .navbar-nav > li > span {
     padding-top: 20px;
-    padding-bottom: 20px;
   }
 }
 @media (min-width: 768px) {
