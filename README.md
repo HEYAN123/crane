@@ -7,7 +7,8 @@
 ## 启动
 
 ```bash
-npm serve
+gem install jekyll-paginate
+jekyll server
 http://localhost:4000/
 ```
 

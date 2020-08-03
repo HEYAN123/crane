@@ -1,4 +1,4 @@
-I"��<ul id="markdown-toc">
+I"t�<ul id="markdown-toc">
   <li><a href="#异步" id="markdown-toc-异步">异步</a>    <ul>
       <li><a href="#定义" id="markdown-toc-定义">定义</a></li>
       <li><a href="#异步现象" id="markdown-toc-异步现象">异步现象</a></li>
@@ -227,11 +227,11 @@
   <li>用一个例子比喻回调：我在写代码，然后告诉小明帮我拿一本书过来我要查一个问题，然后小明去拿书了，而我在他拿回来之前继续写代码，等他帮我把书拿回来之后我就开始查这本书。此场景中我写代码就是主线程中正在执行的同步代码，告诉小明帮我拿书则是发出一个异步任务，小明去做了，然后我拿到这本书查的事件就是处理结果的回调函数了。类代码如下：</li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">写代码</span><span class="mi">1</span><span class="p">;</span>
-<span class="err">小明拿书</span><span class="p">((</span><span class="err">书</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
-    <span class="err">查书</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">写代码1</span><span class="p">;</span>
+<span class="nx">小明拿书</span><span class="p">((</span><span class="nx">书</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+    <span class="nx">查书</span><span class="p">;</span>
 <span class="p">});</span>
-<span class="err">写代码</span><span class="mi">2</span><span class="p">;</span>
+<span class="nx">写代码2</span><span class="p">;</span>
 </code></pre></div></div>
 
 <ul>
@@ -265,9 +265,9 @@
 </ul>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">flag</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="err">小明拿书</span><span class="p">((</span><span class="err">书</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
+<span class="nx">小明拿书</span><span class="p">((</span><span class="nx">书</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">flag</span><span class="p">)</span> <span class="p">{</span>
-        <span class="err">查书</span><span class="p">;</span>
+        <span class="nx">查书</span><span class="p">;</span>
         <span class="nx">flag</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
     <span class="p">}</span> <span class="k">else</span> <span class="k">return</span><span class="p">;</span>
 <span class="p">});</span>

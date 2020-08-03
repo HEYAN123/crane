@@ -7,9 +7,9 @@ url: http://www.hifreud.com
 github: https://github.com/HEYAN123/
 baseurl: "/crane"
 description: Actually, less is more!
-meta_description: 康志华;个人博客;学而不思则罔;思而不学则殆;生命不止;折腾不休
+meta_description: 贺妍;个人博客
 motto: It's our wits that make us men.
-banner: 学而不思则罔，思而不学则殆。
+banner: 所好者道也，进乎技矣。
 tech: ['css']
 
 #permalink: /:categories/:year/:month/:day/:title/
