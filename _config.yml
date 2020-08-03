@@ -2,11 +2,11 @@
 name: Crane
 email: 490817982@qq.com
 author: He Yan
-url: http://www.hifreud.com
+# url: http://www.hifreud.com
 # resume_site: http://www.hifreud.com/Resume.io/
 github: https://github.com/HEYAN123/
 baseurl: "/crane"
-description: Actually, less is more!
+description: 一个前端攻城狮的成长日记
 meta_description: 贺妍;个人博客
 motto: It's our wits that make us men.
 banner: 所好者道也，进乎技矣。

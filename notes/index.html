@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Tech
-header: Posts By Tech
+title: Notes
+header: Posts By Notes
 ---
 
-<!-- tech页面 -->
+<!-- notes页面 -->
 <div class="container docs-container">
   <div class="row">
     <div class="col-md-3">
@@ -14,7 +14,7 @@ header: Posts By Tech
       		<ul class="nav sidenav">
 				    {% if site.categories.first[0] == null %}
               {% for category in site.categories %} 
-            {% if category[0] == 'tech' %}
+            {% if category[0] == 'notes' %}
             <li>
                     <a href="#{{ category }}-ref">
                         {{ category | join: "/" }}
@@ -27,7 +27,7 @@ header: Posts By Tech
                 {% endfor %}
                     {% else %}
                       {% for category in site.categories %} 
-            {% if category[0] == 'tech' %}
+            {% if category[0] == 'notes' %}
 
                 <li><a href="#{{ category[0] }}-ref">
                   {{ category[0] | join: "/" }} <span style="color: #999999;" >({{ category[1].size }})</span>
@@ -46,7 +46,7 @@ header: Posts By Tech
           <div class="home">
             <!-- 文章列表 -->
             {% for category in site.categories %} 
-            {% if category[0] == 'tech' %}
+            {% if category[0] == 'notes' %}
               <h2 id="{{ category[0] }}-ref">{{ category[0] | join: "/" }}</h2>
               <ul>
                 {% assign pages_list = category[1] %}  

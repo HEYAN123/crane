@@ -3,6 +3,7 @@
   <div class="container">
   	{% if page.time != null %}
     	<a href="{{ '/tech/' | prepend: site.baseurl }}#{{page.tech}}-ref">{{page.tech}}</a>	/
+    	<a href="{{ '/notes/' | prepend: site.baseurl }}#{{page.notes}}-ref">{{page.notes}}</a>	/
     	<a href="{{ '/essay/' | prepend: site.baseurl }}#{{page.essay}}-ref">{{page.essay}}</a>
     {% else %}
     	{{ site.banner }}

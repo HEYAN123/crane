@@ -18,8 +18,11 @@ layout: null
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
         <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
+        {% for tag in post.notes %}
+        <category>{{ cat | xml_escape }}</category>
+        {% endfor %}
         {% for tag in post.essay %}
-        <category>{{ tag | xml_escape }}</category>
+        <category>{{ cat | xml_escape }}</category>
         {% endfor %}
         {% for cat in post.tech %}
         <category>{{ cat | xml_escape }}</category>
