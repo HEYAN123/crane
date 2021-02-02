@@ -1,8 +1,11 @@
-I"�
-<ul id="markdown-toc">
+I"�<ul id="markdown-toc">
   <li><a href="#基础类型" id="markdown-toc-基础类型">基础类型</a>    <ul>
       <li><a href="#ts中支持的基础数据类型" id="markdown-toc-ts中支持的基础数据类型">ts中支持的基础数据类型</a></li>
       <li><a href="#类型断言" id="markdown-toc-类型断言">类型断言</a></li>
+    </ul>
+  </li>
+  <li><a href="#变量声明" id="markdown-toc-变量声明">变量声明</a>    <ul>
+      <li><a href="#varletconst" id="markdown-toc-varletconst">var,let,const</a></li>
     </ul>
   </li>
 </ul>
@@ -45,4 +48,43 @@
 </code></pre></div>    </div>
   </li>
 </ul>
+
+<h2 id="变量声明">变量声明</h2>
+
+<ul>
+  <li>let和const是es6规范中新增的变量声明语法，因为ts是js的超集，所以其本身就支持二者，并且推荐在ts中使用。
+    <h3 id="varletconst">var,let,const</h3>
+  </li>
+  <li>下面简要介绍一下三种变量声明的特点。</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>关键字</th>
+      <th>作用域</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td>var</td>
+      <td>在包含它的函数，模块，命名空间或全局作用域内任何文职被访问到</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">var</code></p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">作用域</code>：var声明的变量可以在包含它的函数，模块，命名空间或全局作用域内任何文职被访问到；多次声明同一个变量不会报错。</p>
+
+    <p><code class="language-plaintext highlighter-rouge">let</code></p>
+
+    <p><code class="language-plaintext highlighter-rouge">const</code></p>
+  </li>
+</ul>
+
 :ET
