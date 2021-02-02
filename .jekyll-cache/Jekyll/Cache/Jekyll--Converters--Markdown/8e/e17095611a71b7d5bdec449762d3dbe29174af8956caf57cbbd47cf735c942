@@ -1,0 +1,48 @@
+I"�
+<ul id="markdown-toc">
+  <li><a href="#基础类型" id="markdown-toc-基础类型">基础类型</a>    <ul>
+      <li><a href="#ts中支持的基础数据类型" id="markdown-toc-ts中支持的基础数据类型">ts中支持的基础数据类型</a></li>
+      <li><a href="#类型断言" id="markdown-toc-类型断言">类型断言</a></li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>参考资料：<a href="https://www.tslang.cn/docs/handbook/basic-types.html">https://www.tslang.cn/docs/handbook/basic-types.html</a></p>
+</blockquote>
+
+<h2 id="基础类型">基础类型</h2>
+
+<h3 id="ts中支持的基础数据类型">ts中支持的基础数据类型</h3>
+
+<ul>
+  <li>boolean：布尔值</li>
+  <li>number：数字</li>
+  <li>string：字符串</li>
+  <li>[] / number[] / Array&lt;number&gt;：数组</li>
+  <li>[string, number]：元组（表示一个已知元素数量和类型的数组，各元素类型不必相同）</li>
+  <li>enum：枚举（为一组数值赋予友好的名字）</li>
+  <li>any：不进行类型检查的任意类型</li>
+  <li>void：没有任何类型（通常表示无返回值）</li>
+  <li>null</li>
+  <li>undefined</li>
+  <li>never：永远不存在值的类型（总会抛出异常/无返回值的函数/箭头函数返回值/函数存在无法到达的终点）</li>
+  <li>object</li>
+</ul>
+
+<h3 id="类型断言">类型断言</h3>
+
+<ul>
+  <li>表示人为确定某值应该当作什么类型去处理</li>
+  <li>
+    <p>有两种写法：</p>
+
+    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">val</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">a string</span><span class="dl">"</span><span class="p">;</span>
+<span class="c">&lt;!--</span> <span class="nx">尖括号语法</span> <span class="o">--&gt;</span>
+<span class="kd">let</span> <span class="nx">valLen1</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="kr">string</span><span class="o">&gt;</span><span class="nx">val</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+<span class="c">&lt;!--</span> <span class="k">as</span> <span class="nx">语法</span> <span class="o">--&gt;</span>
+<span class="kd">let</span> <span class="nx">valLen2</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span> <span class="k">as</span> <span class="kr">string</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+:ET
