@@ -1,0 +1,271 @@
+I"�Q<ul id="markdown-toc">
+  <li><a href="#基础类型" id="markdown-toc-基础类型">基础类型</a>    <ul>
+      <li><a href="#ts中支持的基础数据类型" id="markdown-toc-ts中支持的基础数据类型">ts中支持的基础数据类型</a></li>
+      <li><a href="#类型断言" id="markdown-toc-类型断言">类型断言</a></li>
+    </ul>
+  </li>
+  <li><a href="#变量声明" id="markdown-toc-变量声明">变量声明</a>    <ul>
+      <li><a href="#varletconst" id="markdown-toc-varletconst">var,let,const</a></li>
+      <li><a href="#解构" id="markdown-toc-解构">解构</a></li>
+    </ul>
+  </li>
+  <li><a href="#接口" id="markdown-toc-接口">接口</a>    <ul>
+      <li><a href="#对象类型" id="markdown-toc-对象类型">对象类型</a></li>
+      <li><a href="#函数类型" id="markdown-toc-函数类型">函数类型</a></li>
+      <li><a href="#可索引类型" id="markdown-toc-可索引类型">可索引类型</a></li>
+    </ul>
+  </li>
+</ul>
+
+<blockquote>
+  <p>参考资料：<a href="https://www.tslang.cn/docs/handbook/basic-types.html">https://www.tslang.cn/docs/handbook/basic-types.html</a></p>
+</blockquote>
+
+<h2 id="基础类型">基础类型</h2>
+
+<h3 id="ts中支持的基础数据类型">ts中支持的基础数据类型</h3>
+
+<ul>
+  <li>boolean：布尔值</li>
+  <li>number：数字</li>
+  <li>string：字符串</li>
+  <li>[] / number[] / Array&lt;number&gt;：数组</li>
+  <li>[string, number]：元组（表示一个已知元素数量和类型的数组，各元素类型不必相同）</li>
+  <li>enum：枚举（为一组数值赋予友好的名字）</li>
+  <li>any：不进行类型检查的任意类型</li>
+  <li>void：没有任何类型（通常表示无返回值）</li>
+  <li>null</li>
+  <li>undefined</li>
+  <li>never：永远不存在值的类型（总会抛出异常/无返回值的函数/箭头函数返回值/函数存在无法到达的终点）</li>
+  <li>object</li>
+</ul>
+
+<h3 id="类型断言">类型断言</h3>
+
+<ul>
+  <li>表示人为确定某值应该当作什么类型去处理</li>
+  <li>
+    <p>有两种写法：</p>
+
+    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">val</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">a string</span><span class="dl">"</span><span class="p">;</span>
+<span class="c">&lt;!--</span> <span class="nx">尖括号语法</span> <span class="o">--&gt;</span>
+<span class="kd">let</span> <span class="nx">valLen1</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="kr">string</span><span class="o">&gt;</span><span class="nx">val</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+<span class="c">&lt;!--</span> <span class="k">as</span> <span class="nx">语法</span> <span class="o">--&gt;</span>
+<span class="kd">let</span> <span class="nx">valLen2</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="p">(</span><span class="nx">val</span> <span class="k">as</span> <span class="kr">string</span><span class="p">).</span><span class="nx">length</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="变量声明">变量声明</h2>
+
+<ul>
+  <li>let和const是es6规范中新增的变量声明语法，因为ts是js的超集，所以其本身就支持二者，并且推荐在ts中使用。</li>
+</ul>
+
+<h3 id="varletconst">var,let,const</h3>
+
+<ul>
+  <li>下面简要介绍一下三种变量声明的特点。</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>关键字</th>
+      <th>作用域</th>
+      <th>说明</th>
+      <th>声明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>var</td>
+      <td>var作用域/函数作用域</td>
+      <td>在包含它的函数，模块，命名空间或全局作用域内任何文职被访问到</td>
+      <td>可重复声明覆盖</td>
+    </tr>
+    <tr>
+      <td>let</td>
+      <td>词法作用域/块作用域</td>
+      <td>变量在包含它们的块或for循环之外不能访问</td>
+      <td>不能在声明之前读写，不可多次声明</td>
+    </tr>
+    <tr>
+      <td>const</td>
+      <td>词法作用域/块作用域</td>
+      <td>变量在包含它们的块或for循环之外不能访问</td>
+      <td>不能在声明之前读写，不可多次声明，不可重复赋值</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="解构">解构</h3>
+
+<ul>
+  <li>
+    <p>解构数组</p>
+
+    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="kd">let</span> <span class="p">[</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="kd">let</span> <span class="p">[</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">second</span><span class="p">,</span> <span class="nx">first</span><span class="p">];</span>
+<span class="kd">function</span> <span class="nx">fun</span><span class="p">([</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">]:</span> <span class="p">[</span><span class="kr">number</span><span class="p">,</span> <span class="kr">number</span><span class="p">])</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">fun</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+<span class="kd">let</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="p">...</span><span class="nx">rest</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr2</span><span class="p">;</span>
+<span class="kd">let</span> <span class="p">[,</span> <span class="nx">b</span><span class="p">,</span> <span class="p">,</span> <span class="nx">d</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr2</span><span class="p">;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>解构对象</p>
+
+    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="na">b</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="na">c</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<span class="p">};</span>
+<span class="kd">let</span> <span class="p">{</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
+<span class="kd">let</span> <span class="p">{</span> <span class="nx">first</span><span class="p">,</span> <span class="p">...</span><span class="nx">rest</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
+<span class="kd">let</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="nx">aaa</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="nx">bbb</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
+<span class="kd">let</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="nx">val1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="nx">val2</span> <span class="p">}:</span> <span class="p">{</span> <span class="nl">a</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">b</span><span class="p">:</span> <span class="kr">number</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">fun</span><span class="p">(</span><span class="nx">obj</span><span class="p">:</span> <span class="p">{</span><span class="nl">a</span><span class="p">:</span> <span class="kr">number</span><span class="p">,</span> <span class="nx">b</span><span class="p">?:</span> <span class="kr">number</span><span class="p">})</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="p">{</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>函数声明</p>
+
+    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">type</span> <span class="nx">C</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">b</span><span class="p">?:</span> <span class="kr">number</span> <span class="p">};</span>
+<span class="kd">function</span> <span class="nx">fun</span><span class="p">({</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="p">}:</span> <span class="nx">C</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="c">&lt;!--</span> <span class="nx">为参数对象属性设置默认值</span><span class="err">（</span><span class="nx">无该属性时生效</span><span class="err">）</span> <span class="o">--&gt;</span>
+<span class="kd">function</span> <span class="nx">fun2</span><span class="p">({</span> <span class="nx">a</span> <span class="o">=</span> <span class="dl">""</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">}:</span> <span class="nx">C</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="c">&lt;!--</span> <span class="nx">为参数对象设置默认对象</span><span class="err">（</span><span class="nx">无该对象时生效</span><span class="err">）</span> <span class="o">--&gt;</span>
+<span class="kd">function</span> <span class="nx">fun3</span><span class="p">({</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">}</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="dl">""</span> <span class="p">}:</span> <span class="nx">C</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>展开</p>
+    <ol>
+      <li>对象，数组等（可迭代对象）可展开</li>
+      <li>展开会覆盖前面的同名属性</li>
+      <li>仅包含对象自身的可枚举属性（会丢失方法）</li>
+      <li>ts中不允许展开泛型函数上的类型参数</li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="接口">接口</h2>
+
+<ul>
+  <li>接口作用：
+    <ol>
+      <li>为类型命名</li>
+      <li>为代码定义契约</li>
+    </ol>
+  </li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">LabelledValue</span> <span class="p">{</span>
+  <span class="nl">label</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">printLabel</span><span class="p">(</span><span class="nx">labelObj</span><span class="p">:</span> <span class="nx">LabelledValue</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">labelObj</span><span class="p">.</span><span class="nx">label</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// it‘s ok</span>
+<span class="nx">printLabel</span><span class="p">({</span>
+  <span class="na">label</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="c1">// error TS2345（对象字面量会经过额外属性检查，若存在目标类型不包含的属性时就会报错）</span>
+<span class="nx">printLabel</span><span class="p">({</span>
+  <span class="na">label</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">world</span><span class="dl">"</span>
+<span class="p">});</span>
+
+<span class="kd">let</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">label</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">world</span><span class="dl">"</span>
+<span class="p">}</span>
+<span class="c1">// 变量引用可绕过额外属性检查</span>
+<span class="nx">printLabel</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+
+<span class="c1">// 使用类型断言可以绕过额外属性检查</span>
+<span class="nx">printLabel</span><span class="p">({</span> <span class="na">label</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hello</span><span class="dl">"</span><span class="p">,</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">world</span><span class="dl">"</span> <span class="p">}</span> <span class="k">as</span> <span class="nx">LabelledValue</span><span class="p">);</span>
+
+
+<span class="c1">// 使用字符串索引签名在接口中定义一个属性，表示该类型对象会带有任意数量的其他属性</span>
+<span class="kr">interface</span> <span class="nx">Student</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="p">[</span><span class="nx">propName</span><span class="p">:</span> <span class="kr">string</span><span class="p">]:</span> <span class="kr">any</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="对象类型">对象类型</h3>
+
+<ul>
+  <li>
+    <p>可选属性：接口中定义可选的属性字段（对可能存在对属性进行预定义，引用不存在属性时将抛出错误）</p>
+
+    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Person</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="nl">age</span><span class="p">?:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>只读属性：接口中定义只能在对象刚刚创建时修改其值的属性</p>
+
+    <div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">Person</span> <span class="p">{</span>
+  <span class="k">readonly</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="函数类型">函数类型</h3>
+
+<ul>
+  <li>接口也可描述函数类型（包括参数类型和返回值类型）</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">QueryPerson</span> <span class="p">{</span>
+  <span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="nx">boolean</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">ifPersonExist</span><span class="p">:</span> <span class="nx">QueryPerson</span><span class="p">;</span>
+<span class="c">&lt;!--</span> <span class="nx">参数名可以不一样</span><span class="err">，</span><span class="nx">参数和返回值类型可以不写</span> <span class="nx">ts会依据接口进行类型推断</span> <span class="o">--&gt;</span>
+<span class="nx">ifPersonExist</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">age</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="nx">boolean</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="可索引类型">可索引类型</h3>
+
+<ul>
+  <li>可索引类型具有一个索引签名，它描述对象索引(key)的类型，还有相应的索引返回值(value)的类型</li>
+  <li>ts支持两种索引类型：number，string</li>
+  <li>同时使用两种索引类型时，二者的value类型需保持相同（因为都是转为string类型索引的）</li>
+  <li>可以在接口中设置readonly，防止给索引赋值</li>
+</ul>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">interface</span> <span class="nx">StringArr</span> <span class="p">{</span>
+  <span class="c1">// 表示key为number类型，value为string类型</span>
+  <span class="p">[</span><span class="nx">index</span><span class="p">:</span> <span class="kr">number</span><span class="p">]:</span> <span class="kr">string</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">myArr</span><span class="p">:</span> <span class="nx">StringArr</span><span class="p">;</span>
+<span class="nx">myArr</span> <span class="o">=</span> <span class="p">[</span><span class="dl">"</span><span class="s2">bob</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">fred</span><span class="dl">"</span><span class="p">];</span>
+
+<span class="kd">let</span> <span class="nx">firstStr</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="nx">myArr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+</code></pre></div></div>
+:ET
