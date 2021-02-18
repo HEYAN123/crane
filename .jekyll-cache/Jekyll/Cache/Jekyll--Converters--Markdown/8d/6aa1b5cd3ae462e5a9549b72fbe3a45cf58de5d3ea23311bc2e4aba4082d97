@@ -1,4 +1,4 @@
-I"֌<ul id="markdown-toc">
+I"�<ul id="markdown-toc">
   <li><a href="#基础类型" id="markdown-toc-基础类型">基础类型</a>    <ul>
       <li><a href="#ts中支持的基础数据类型" id="markdown-toc-ts中支持的基础数据类型">ts中支持的基础数据类型</a></li>
       <li><a href="#类型断言" id="markdown-toc-类型断言">类型断言</a></li>
@@ -21,6 +21,11 @@
   </li>
   <li><a href="#类" id="markdown-toc-类">类</a>    <ul>
       <li><a href="#继承" id="markdown-toc-继承">继承</a></li>
+      <li><a href="#类成员修饰符" id="markdown-toc-类成员修饰符">类成员修饰符</a></li>
+      <li><a href="#参数属性" id="markdown-toc-参数属性">参数属性</a></li>
+      <li><a href="#存取器" id="markdown-toc-存取器">存取器</a></li>
+      <li><a href="#静态属性" id="markdown-toc-静态属性">静态属性</a></li>
+      <li><a href="#抽象类" id="markdown-toc-抽象类">抽象类</a></li>
     </ul>
   </li>
 </ul>
@@ -446,77 +451,321 @@
 </code></pre></div></div>
 
 <blockquote>
-  <p>例2:
-```ts
-class Animal {
-  name: string;
-  constructor(theName: string) {
-    this.name = theName;
-  }
-  move(distanceInMeters: number = 0) {
-    console.log(“move”, distanceInMeters);
-  }
-}</p>
+  <p>例2:</p>
 </blockquote>
 
-<p>class Snake extends Animal {
-  constructor(name: string) {
-    // 以name入参，执行基类的构造方法(必须的)
-    super(name);
-  }
-  // 重写基类的move方法
-  move(distanceInMeters: number = 0) {
-    console.log(“Slithering”);
-    // 执行基类的move方法（基类：当作函数时会执行构造函数；当作对象时可获取属性和方法）
-    super.move(distanceInMeters);
-  }
-}</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Animal</span> <span class="p">{</span>
+  <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">theName</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">theName</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nx">move</span><span class="p">(</span><span class="nx">distanceInMeters</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">move</span><span class="dl">"</span><span class="p">,</span> <span class="nx">distanceInMeters</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-<p>class Horse extends Animal {
-  constructor(name: string) {
-    super(name);
-  }
-  move(distanceInMeters = 45) {
-    console.log(“Galloping”);
-    super.move(distanceInMeters);
-  }
-}</p>
+<span class="kd">class</span> <span class="nx">Snake</span> <span class="kd">extends</span> <span class="nx">Animal</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 以name入参，执行基类的构造方法(必须的)</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+  <span class="p">}</span> 
+  <span class="c1">// 重写基类的move方法</span>
+  <span class="nx">move</span><span class="p">(</span><span class="nx">distanceInMeters</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Slithering</span><span class="dl">"</span><span class="p">);</span>
+    <span class="c1">// 执行基类的move方法（基类：当作函数时会执行构造函数；当作对象时可获取属性和方法）</span>
+    <span class="k">super</span><span class="p">.</span><span class="nx">move</span><span class="p">(</span><span class="nx">distanceInMeters</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-### 类成员修饰符
+<span class="kd">class</span> <span class="nx">Horse</span> <span class="kd">extends</span> <span class="nx">Animal</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="nx">move</span><span class="p">(</span><span class="nx">distanceInMeters</span> <span class="o">=</span> <span class="mi">45</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Galloping</span><span class="dl">"</span><span class="p">);</span>
+    <span class="k">super</span><span class="p">.</span><span class="nx">move</span><span class="p">(</span><span class="nx">distanceInMeters</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-修饰符 | 含义 | 说明 | 声明
-------|-------|-----|-----
-public（默认） | 可被自由访问 | 在包含它的函数，模块，命名空间或全局作用域内任何文职被访问到 | 可重复声明覆盖
-private | 不能在声明它的类外部访问 | 变量在包含它们的块或for循环之外不能访问 | 不能在声明之前读写，不可多次声明
-protected | 在派生类中仍可访问 | 变量在包含它们的块或for循环之外不能访问 | 不能在声明之前读写，不可多次声明，不可重复赋值
-readonly | 在派生类中仍可访问 | 变量在包含它们的块或for循环之外不能访问 | 不能在声明之前读写，不可多次声明，不可重复赋值
+</code></pre></div></div>
 
-&gt; 例1:
-```ts
-class Animal {
-  public name: string;
-  public constructor(theName: string) {
-    this.name = theName;
-  }
-  public move(distanceInMeters: number) {
-    console.log("move", distanceInMeters);
-  }
-}
+<h3 id="类成员修饰符">类成员修饰符</h3>
+
+<ul>
+  <li>这些修饰符修饰的成员都是当类被实例化时才会被初始化的属性，反过来讲是依附于实例存在的属性（区别于静态属性）</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>修饰符</th>
+      <th>含义</th>
+      <th>兼容比较</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>public（默认）</td>
+      <td>可被自由访问</td>
+      <td>不同声明处，但类型相同则兼容</td>
+    </tr>
+    <tr>
+      <td>private</td>
+      <td>可以在声明它的类外部访问</td>
+      <td>相同声明处，且类型相同则兼容</td>
+    </tr>
+    <tr>
+      <td>protected</td>
+      <td>可以在声明它的类和派生类中访问</td>
+      <td>相同声明处，且类型相同则兼容</td>
+    </tr>
+    <tr>
+      <td>readonly</td>
+      <td>只读属性，表示必须在声明时或构造函数里被初始化</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>例1: 默认修饰符public</p>
+</blockquote>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Animal</span> <span class="p">{</span>
+  <span class="k">public</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="k">public</span> <span class="kd">constructor</span><span class="p">(</span><span class="nx">theName</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">theName</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">public</span> <span class="nx">move</span><span class="p">(</span><span class="nx">distanceInMeters</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">move</span><span class="dl">"</span><span class="p">,</span> <span class="nx">distanceInMeters</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
 <blockquote>
-  <p>例2:
-```ts
-class Animal {
-  private name: string;
-  constructor(theName: string) {
-    this.name = theName;
-  }
-}</p>
+  <p>例2: private修饰的属性不可在其类外访问</p>
 </blockquote>
 
-<p>// err!私有属性不可在声明它的类外使用
-new Animal(“cat”).name;
-```</p>
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Animal</span> <span class="p">{</span>
+  <span class="c1">// 类的私有属性相当于只局限于该类内部自己使用的属性</span>
+  <span class="k">private</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">theName</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">theName</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// err!私有属性不可在声明它的类外使用</span>
+<span class="k">new</span> <span class="nx">Animal</span><span class="p">(</span><span class="dl">"</span><span class="s2">cat</span><span class="dl">"</span><span class="p">).</span><span class="nx">name</span><span class="p">;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>例3: 不同声明，相同类型的private修饰类型不兼容</p>
+</blockquote>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Animal</span> <span class="p">{</span>
+  <span class="k">private</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">theName</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">theName</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Rhino</span> <span class="kd">extends</span> <span class="nx">Animal</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="dl">"</span><span class="s2">Rhino</span><span class="dl">"</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Employee</span> <span class="p">{</span>
+  <span class="k">private</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">theName</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">theName</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Animal</span><span class="p">(</span><span class="dl">"</span><span class="s2">Goat</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">let</span> <span class="nx">rhino</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Rhino</span><span class="p">();</span>
+<span class="kd">let</span> <span class="nx">employee</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="dl">"</span><span class="s2">Bob</span><span class="dl">"</span><span class="p">);</span>
+
+<span class="c1">// 继承了基类的子类和基类兼容</span>
+<span class="nx">animal</span> <span class="o">=</span> <span class="nx">rhino</span><span class="p">;</span>
+<span class="c1">// 结构相同但属性不是同一处声明的不兼容</span>
+<span class="nx">animal</span> <span class="o">=</span> <span class="nx">employee</span><span class="p">;</span> <span class="c1">// err! Animal 与Employee不兼容</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>例4: protected成员与private类似，但是多了仍可以在派生类中访问到的性质</p>
+</blockquote>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Person</span> <span class="p">{</span>
+  <span class="c1">// 基类中声明的保护类型</span>
+  <span class="k">protected</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Employee</span> <span class="kd">extends</span> <span class="nx">Person</span> <span class="p">{</span>
+  <span class="k">private</span> <span class="nx">department</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">department</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">department</span> <span class="o">=</span> <span class="nx">department</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">public</span> <span class="nx">getElevatorPitch</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// 派生类中仍可以访问到基类中的保护类型成员</span>
+    <span class="k">return</span> <span class="s2">`Hello, my name is </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">}</span><span class="s2">. I work in </span><span class="p">${</span><span class="k">this</span><span class="p">.</span><span class="nx">department</span><span class="p">}</span><span class="s2">.`</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">howard</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="dl">"</span><span class="s2">Howard</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Sales</span><span class="dl">"</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">howard</span><span class="p">.</span><span class="nx">getElevatorPitch</span><span class="p">());</span>
+<span class="c1">// err! 不可在基类和派生类外访问到保护成员</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">howard</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>例5: 构造函数被标记为protected，意味着该类不可被实例化，但可被继承（不可在类外访问执行，但可在派生类中访问执行）</p>
+</blockquote>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Person</span> <span class="p">{</span>
+  <span class="k">protected</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="k">protected</span> <span class="kd">constructor</span><span class="p">(</span><span class="nx">theName</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">theName</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Employee</span> <span class="kd">extends</span> <span class="nx">Person</span> <span class="p">{</span>
+  <span class="k">private</span> <span class="nx">department</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+
+  <span class="kd">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span> <span class="nx">department</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 可在派生类中调用基类中保护类型的构造函数</span>
+    <span class="k">super</span><span class="p">(</span><span class="nx">name</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">department</span> <span class="o">=</span> <span class="nx">department</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">public</span> <span class="nx">getElevatorPitch</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">department</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">howard</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Employee</span><span class="p">(</span><span class="dl">"</span><span class="s2">Howard</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Sales</span><span class="dl">"</span><span class="p">);</span>
+<span class="c1">// err!不可在类外执行保护类型的构造函数</span>
+<span class="kd">let</span> <span class="nx">john</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="dl">"</span><span class="s2">John</span><span class="dl">"</span><span class="p">);</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>例6: 只读属性只能在声明时或构造函数里被初始化</p>
+</blockquote>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Octopus</span> <span class="p">{</span>
+  <span class="k">readonly</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
+  <span class="c1">// 声明时初始化</span>
+  <span class="k">readonly</span> <span class="nx">numberOfLegs</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+  <span class="kd">constructor</span> <span class="p">(</span><span class="nx">theName</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// 构造函数里初始化</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">theName</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">tom</span> <span class="o">=</span> <span class="nx">nem</span> <span class="nx">Octopus</span><span class="p">(</span><span class="dl">'</span><span class="s1">Tom</span><span class="dl">'</span><span class="p">);</span>
+<span class="c1">// err! 只读属性</span>
+<span class="nx">tom</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Tim</span><span class="dl">"</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h3 id="参数属性">参数属性</h3>
+
+<blockquote>
+  <p>给构造函数的参数增加成员修饰符实现直接对成员的声明&amp;初始化</p>
+</blockquote>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Octopus</span> <span class="p">{</span>
+  <span class="k">readonly</span> <span class="nx">numberOfLegs</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">readonly</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="存取器">存取器</h3>
+
+<ul>
+  <li>getters/setters：截取对对象成员的访问和赋值</li>
+  <li>只有get无set的存取器被自动推断为readonly</li>
+</ul>
+
+<blockquote>
+  <p>给普通类加上存取器的使用，使得获取和赋值操作必须经过中间动作</p>
+</blockquote>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// ---普通类</span>
+<span class="kd">class</span> <span class="nx">Employee</span> <span class="p">{</span>
+  <span class="nl">salary</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">tom</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Employee</span><span class="p">();</span>
+<span class="c1">// 普通类成员可以被随意访问修改</span>
+<span class="nx">tom</span><span class="p">.</span><span class="nx">salary</span> <span class="o">=</span> <span class="mi">2500</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tom</span><span class="p">.</span><span class="nx">salary</span><span class="p">);</span>
+
+<span class="c1">// ---加入存取器</span>
+<span class="kd">let</span> <span class="nx">password</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">123</span><span class="dl">'</span><span class="p">;</span>
+<span class="kd">class</span> <span class="nx">Employee</span> <span class="p">{</span>
+  <span class="k">private</span> <span class="nx">_salary</span><span class="p">:</span> <span class="kr">number</span><span class="p">;</span>
+
+  <span class="kd">get</span> <span class="nx">salary</span><span class="p">():</span> <span class="kr">string</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_salary</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">元</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="kd">set</span> <span class="nx">salary</span><span class="p">(</span><span class="nx">newSalary</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">password</span> <span class="o">&amp;&amp;</span> <span class="nx">password</span> <span class="o">===</span> <span class="dl">'</span><span class="s1">123</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">this</span><span class="p">.</span><span class="nx">_salary</span> <span class="o">=</span> <span class="nx">newSalary</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">err</span><span class="dl">"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">employee</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Employee</span><span class="p">();</span>
+<span class="nx">employee</span><span class="p">.</span><span class="nx">salary</span> <span class="o">=</span> <span class="mi">2500</span><span class="p">;</span>
+<span class="nx">alert</span><span class="p">(</span><span class="nx">employee</span><span class="p">.</span><span class="nx">salary</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="静态属性">静态属性</h3>
+
+<blockquote>
+  <p>静态属性只存在于类本身身上，而不是类的实例上，访问时直接以访问类对象的属性的形式访问</p>
+</blockquote>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Person</span> <span class="p">{</span>
+  <span class="k">static</span> <span class="nx">eyes</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="k">static</span> <span class="nx">legs</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="nx">getPersonFeature</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">Person</span><span class="p">.</span><span class="nx">eyes</span> <span class="o">+</span> <span class="nx">Person</span><span class="p">.</span><span class="nx">legs</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">public</span> <span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span> <span class="nx">tom</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="dl">'</span><span class="s1">Tom</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">tom</span><span class="p">.</span><span class="nx">getPersonFeature</span><span class="p">());</span>
+</code></pre></div></div>
+
+<h3 id="抽象类">抽象类</h3>
+
+<ul>
+  <li>抽象类作为其他派生类的基类使用，一般不会被直接实例化（类的基础模板类）</li>
+  <li>不同于接口，抽象类内部可以包含非抽象成员的实现细节</li>
+  <li>通过abstract定义抽象类和抽象方法</li>
+  <li>抽象方法不包含具体实现，必须在派生类中实现</li>
+</ul>
+
+<blockquote>
+  <p>抽象类举例</p>
+</blockquote>
+
+<div class="language-ts highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">abstract</span> <span class="kd">class</span> <span class="nx">Animal</span> <span class="p">{</span>
+  <span class="kd">abstract</span> <span class="nx">makeSound</span><span class="p">():</span> <span class="k">void</span><span class="p">;</span>
+  <span class="nx">move</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">move</span><span class="dl">'</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
 :ET
