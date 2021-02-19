@@ -1,10 +1,5 @@
-<<<<<<< HEAD:.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/8d/6aa1b5cd3ae462e5a9549b72fbe3a45cf58de5d3ea23311bc2e4aba4082d97
-I"�<ul id="markdown-toc">
-  <li><a href="#基础类型" id="markdown-toc-基础类型">基础类型</a>    <ul>
-=======
 I"�#<ul id="markdown-toc">
   <li><a href="#-基础类型" id="markdown-toc--基础类型">👀 基础类型</a>    <ul>
->>>>>>> dev:.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/31/1f5eb0547c0e942037a96328f18c375b98dbb00f6162ba8b82f86bc457943e
       <li><a href="#ts中支持的基础数据类型" id="markdown-toc-ts中支持的基础数据类型">ts中支持的基础数据类型</a></li>
       <li><a href="#类型断言" id="markdown-toc-类型断言">类型断言</a></li>
     </ul>
@@ -738,8 +733,6 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<<<<<<< HEAD:.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/8d/6aa1b5cd3ae462e5a9549b72fbe3a45cf58de5d3ea23311bc2e4aba4082d97
-=======
 <h2 id="泛型generics">泛型（Generics）</h2>
 
 <ul>
@@ -941,5 +934,4 @@
 <h2 id="模块">模块</h2>
 
 <h2 id="命名空间">命名空间</h2>
->>>>>>> dev:.jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/31/1f5eb0547c0e942037a96328f18c375b98dbb00f6162ba8b82f86bc457943e
 :ET
