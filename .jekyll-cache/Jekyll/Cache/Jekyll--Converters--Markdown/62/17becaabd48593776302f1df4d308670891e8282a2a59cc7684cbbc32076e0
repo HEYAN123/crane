@@ -1,4 +1,4 @@
-I"�G<ul id="markdown-toc">
+I"FG<ul id="markdown-toc">
   <li><a href="#https" id="markdown-toc-https">https</a>    <ul>
       <li><a href="#http协议的缺点" id="markdown-toc-http协议的缺点">http协议的缺点</a>        <ul>
           <li><a href="#1-通信内容赤果果地暴露在线路上内容会被窃听" id="markdown-toc-1-通信内容赤果果地暴露在线路上内容会被窃听">1. 通信内容赤果果地暴露在线路上，内容会被窃听</a></li>
@@ -61,7 +61,7 @@
   <li>先来看看互联网长啥样：</li>
 </ul>
 
-<p><img src="../../../static/https.PNG" alt="avatar" /></p>
+<p><img src="/static/172.desc.jpg" alt="avatar" /></p>
 
 <ul>
   <li>结合前面讲的，再看看我们的http报文传递在这里面是怎么传递的：</li>
@@ -104,18 +104,18 @@
     <p>与SSL或TLS组合使用的http成为HTTPS。</p>
   </li>
   <li>还记得我们之前讲的http通信流吗：
-<img src="../../../static/http2.PNG" alt="avatar" /></li>
+<img src="/static/http2.PNG" alt="avatar" /></li>
   <li>我们把这一过程放大了看，在各层传递数据的时候会在各层依据各层的协议对数据进行包装（加各种首部），应用层产生了http报文，然后传递给传输层再包装产生TCP报文。以SSL为例，当我们将http和SSL组合使用时就变成了http先传递给SSL，加上防护盾后传递给TCP层，如下图所示：</li>
 </ul>
 
-<p><img src="../../../static/https2.PNG" alt="avatar" /></p>
+<p><img src="/static/https2.PNG" alt="avatar" /></p>
 
 <ul>
   <li>所以https不能称之为一种新的协议，它只是代表http和其他协议的组合使用。</li>
   <li>使用https方式通信的网站我们可以看到它在浏览器里地址栏中的URI开头标明：</li>
 </ul>
 
-<p><img src="../../../static/https1.PNG" alt="avatar" /></p>
+<p><img src="/static/https1.PNG" alt="avatar" /></p>
 
 <h3 id="https中对于http缺陷的弥补">https中对于http缺陷的弥补</h3>
 
@@ -135,7 +135,7 @@
   <li>还是看一看这个图：</li>
 </ul>
 
-<p><img src="../../../static/https2.PNG" alt="avatar" /></p>
+<p><img src="/static/https2.PNG" alt="avatar" /></p>
 
 <ul>
   <li>
@@ -159,7 +159,7 @@
   <li>答案在下面这张来自百度百科的图里：</li>
 </ul>
 
-<p><img src="../../../static/https3.PNG" alt="avatar" /></p>
+<p><img src="/static/https3.PNG" alt="avatar" /></p>
 
 <ul>
   <li>由上图可知，TLS是SSL的改进版，由SSL发展而来。</li>
@@ -186,7 +186,7 @@
   <li>过程如下图：</li>
 </ul>
 
-<p><img src="../../../static/https4.PNG" alt="avatar" /></p>
+<p><img src="/static/https4.PNG" alt="avatar" /></p>
 
 <ul>
   <li>在互联网上，使用这种对称加密方式的话有个问题，就是传递过程中必须把这个秘钥也传递给服务器，很容易被窃听，别人得到这个秘钥后消息就可以被破译，所以对称加密方式是不安全的，因为它的秘钥不能安全保存。</li>
@@ -227,7 +227,7 @@
   <li>使用速度快一些的对称加密，既然对称加密的问题是传输过程中暴露秘钥，那我们就用非对称加密保护这个对称秘钥——公钥给这个对称秘钥加密后传到接收方再用私钥解密，这样整个过程中秘钥就是安全的了。此后用对称加密来保护传递的数据内容，接收方再使用对称秘钥解译。</li>
 </ul>
 
-<p><img src="../../../static/https5.PNG" alt="avatar" /></p>
+<p><img src="/static/https5.PNG" alt="avatar" /></p>
 
 <p>所以，https里的沟通过程概括为：</p>
 
@@ -284,7 +284,7 @@
   <li>服务器端需要EV SSL证书证明自己的组织是真实存在且合法的。打开一个https的网站点击地址栏里前面的小锁可查看到所访问网站的证书信息：</li>
 </ul>
 
-<p><img src="../../../static/https6.PNG" alt="avatar" /></p>
+<p><img src="/static/https6.PNG" alt="avatar" /></p>
 
 <ul>
   <li>客户端证书与此类似，用于证明客户端的合法性</li>
