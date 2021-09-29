@@ -1,18 +1,24 @@
-# Crane
+# vue3-temp
 
-## 简介
-
-- 一个前端攻城狮的成长日记
-
-## 启动
-
-```bash
-gem install jekyll-paginate
-jekyll server
-http://localhost:4000/
+## Project setup
+```
+npm install
 ```
 
-## 轮子
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-- jekyll驱动
-- 主题基于LessOrMore改造
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
