@@ -1,24 +1,18 @@
-# vue3-temp
+# crane
 
-## Project setup
-```
-npm install
-```
+## script
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- npm run dev 启动开发环境服务
+- npm run build 打包静态文件
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## path
 
-### Lints and fixes files
-```
-npm run lint
-```
+### build/ webpack相关
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- build/build.js 打包静态文件脚本（使用prod配置）
+- build/webpack.prod.config.js 打包时使用的webpack配置
+
+- build/dev-server.js 启动开发环境服务脚本（使用dev配置）
+- build/webpack.dev.config.js 开发环境使用的webpack配置
+
+- build/webpack.base.config.js 基础webpack配置，dev和prod的公共配置
