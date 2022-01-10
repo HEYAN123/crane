@@ -1,5 +1,5 @@
 const path = require('path');
-// const webpack = require('webpack');
+const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const WebpackBuildNotifierPlugin = require('webpack-build-notifier');
@@ -34,7 +34,7 @@ module.exports = merge(webpackBaseConfig, {
     // // 错误提示
     // new FriendlyErrorsPlugin(),
     // // HMR
-    // new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(), // 热更新
     // new HtmlWebpackPlugin({
     //   filename: devConfig.index,
     //   template: devConfig.template,
