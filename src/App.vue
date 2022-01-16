@@ -1,22 +1,48 @@
 <template>
-    <router-view/>
+  <div id="app" :class="{ 'is-component': isComponent }">
+    <main-header v-if="lang !== 'play'"></main-header>
+    <div class="main-cnt">
+      <router-view></router-view>
+    </div>
+    <main-footer v-if="lang !== 'play' && !isComponent"></main-footer>
+  </div>
 </template>
 
 <script>
+import { use } from './locale';
+import zhLocale from './locale/lang/zh-CN';
+
+use(zhLocale);
 
 export default {
-  name: 'App',
-  components: {
-  }
-}
-</script>
+  name: 'app',
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-</style>
+  computed: {
+    lang() {
+      return 'zh-CN';
+    },
+    isComponent() {
+      return /^component-/.test(this.$route.name || '');
+    }
+  },
+
+  watch: {
+    lang(val) {
+      if (val === 'zh-CN') {
+        this.suggestJump();
+      }
+    }
+  },
+
+  methods: {
+    suggestJump() {
+    }
+  },
+
+  mounted() {
+    if (this.lang === 'zh-CN') {
+      this.suggestJump();
+    }
+  }
+};
+</script>

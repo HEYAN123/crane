@@ -23,7 +23,7 @@ const lessConfig = [
   {
     loader: 'css-loader',
     options: {
-      sourceMap: true,
+      // sourceMap: true,
       // 表示当前loader之后的loader数量
       importLoaders: 2,
     },
@@ -31,13 +31,13 @@ const lessConfig = [
   {
     loader: 'postcss-loader',
     options: {
-      sourceMap: true,
+      // sourceMap: true,
     },
   },
   {
     loader: 'less-loader',
     options: {
-      sourceMap: true,
+      // sourceMap: true,
       javascriptEnabled: true,
     },
   },
@@ -85,7 +85,9 @@ module.exports = {
           {
             loader: 'postcss-loader', // 补全用于浏览器兼容的样式前缀
             options: {
-              plugins: () => [require('autoprefixer')],
+              postcssOptions: {
+                plugins: () => [require('autoprefixer')],
+              },
             },
           }],
       },
@@ -98,16 +100,37 @@ module.exports = {
           {
             loader: 'postcss-loader', // 补全前缀
             options: {
-              plugins: () => [require('autoprefixer')],
+              postcssOptions: {
+                plugins: () => [require('autoprefixer')],
+              },
             },
           },
           {
             loader: 'less-loader', // less转换为css
-            options: {
-              javascriptEnabled: true,
-            },
+            // options: {
+            //   // javascriptEnabled: true,
+            // },
           },
         ],
+      },
+      //  md文档转html
+      {
+        test: /\.md$/,
+        use: [
+          // vue->js
+          {
+            loader: 'vue-loader',
+            options: {
+              compilerOptions: {
+                preserveWhitespace: false
+              }
+            }
+          },
+          // md->vue
+          {
+            loader: path.resolve(__dirname, './md-loader/index.js')
+          }
+        ]
       },
       // 媒体文件处理
       {
@@ -119,11 +142,15 @@ module.exports = {
           name: path.posix.join('', '[name].[ext]?[hash]'),
         },
       },
+      {
+        test: /\.mjs$/i,
+        resolve: { byDependency: { esm: { fullySpecified: false } } }
+      }
     ],
   },
   // 模块索引规则
   resolve: {
-    extensions: ['.vue', '.js'], // 引入没有文件后缀名时按顺序匹配寻找文件
+    extensions: ['.vue', '.js', '.mjs'], // 引入没有文件后缀名时按顺序匹配寻找文件
     //  三方模块寻找的位置
     modules: [
       path.resolve(__dirname, 'src'), 'node_modules',

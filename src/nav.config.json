@@ -1,0 +1,31 @@
+{
+  "zh-CN": [
+    {
+      "name": "更新日志",
+      "path": "/changelog"
+    },
+    {
+      "name": "JS",
+      "groups": [
+        {
+          "groupName": "基础",
+          "list": [
+            {
+              "path": "/http/http",
+              "title": "http 理解"
+            }
+          ]
+        },
+        {
+          "groupName": "高级",
+          "list": [
+            {
+              "path": "/lodash/lodash",
+              "title": "lodash 理解"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
